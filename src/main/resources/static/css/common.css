@@ -1,0 +1,21 @@
+.btn-gradient-blue {
+    background-color: #5989e5;
+    background-image: -webkit-gradient(linear, left top, right top, from(#5989e5), to(#37cfdc));
+    background-image: linear-gradient(to right, #5989e5, #37cfdc);
+    border-color: transparent !important;
+    color: #fff;
+    border: none !important;
+}
+
+/*.navbar-text {
+    font-family: "SansSerif";
+    font-size: ;
+    font-weight: ;
+}
+
+.footer-text {
+    font-family: "SansSerif";
+    font-size: ;
+    font-weight: ;
+}*/
+
