@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <footer>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 text-center my-auto pb-5">
+                    <div class="pb-4">
+                        <div class="pb-4"> <!-- start social -->
+                            <h3>Social</h3>
+                            <div class="d-inline-block p-1">
+                                <a href="https://www.facebook.com/DhartAcademy">
+                                    <i class="fab fa-facebook fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="d-inline-block p-1">
+                                <a href="https://www.instagram.com/dhartacademy">
+                                    <i class="fab fa-instagram fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="d-inline-block p-1">
+                                <a href="https://www.youtube.com/DhartAcademy">
+                                    <i class="fab fa-youtube fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="d-inline-block p-1">
+                                <a href="https://twitter.com/dhartacademy">
+                                    <i class="fab fa-twitter fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>  <!-- end social -->
+
+                        <div>
+                            <h3>Contatti</h3>
+                            <p>
+                                dhartacademy@gmail.com <br/>
+                                +39 3337678332 (Alessio) <br/>
+                                +39 3387458915 (Diana) <br/>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 text-center pb-5">
+                    <h2>Orari</h2>
+                    <table class="table table-sm table-borderless">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Lunedì</th>
+                            <td>17:30–22:30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Martedì</th>
+                            <td>17:30–22:30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mercoledì</th>
+                            <td>17:30–22:30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Giovedì</th>
+                            <td>17:30–22:30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Venerdì</th>
+                            <td>17:30–22:30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sabato</th>
+                            <td>chiuso</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Domenica</th>
+                            <td>chiuso</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="mapouter mx-auto mb-4"> <!-- start Google Maps -->
+                        <div class="gmap_canvas rounded">
+                            <iframe width="300" height="300" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=Via%20Giuseppe%20Sacconi%2C%2051%2C%2006132%20Perugia%20PG&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://123movies-to.org">123movies</a></div>
+                        <style>.mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 300px;
+                            width: 300px;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 300px;
+                            width: 300px;
+                        }</style>
+                    </div> <!-- end Google Maps -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-dark text-white text-center py-4 mb-0">
+            Copyright &copy; <span id="year"></span> Dhart Academy
+        </div>
+
+    </footer>
+
+    <script>
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+    </script>
+</body>
+</html>
