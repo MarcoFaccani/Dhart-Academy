@@ -3,12 +3,12 @@
 <body>
 
     <footer>
-        <div class="container py-4">
+        <div class="container py-4 mt-5">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 text-center my-auto pb-5">
                     <div class="pb-4">
                         <div class="pb-4"> <!-- start social -->
-                            <h3>Social</h3>
+                            <h3 class="mb-3">Social</h3>
                             <div class="d-inline-block p-1">
                                 <a href="https://www.facebook.com/DhartAcademy">
                                     <i class="fab fa-facebook fa-lg"></i>
@@ -34,7 +34,7 @@
                         <div>
                             <h3>Contatti</h3>
                             <p>
-                                dhartacademy@gmail.com <br/>
+                                <a href="/contact">dhartacademy@gmail.com</a> <br/>
                                 +39 3337678332 (Alessio) <br/>
                                 +39 3387458915 (Diana) <br/>
                             </p>
@@ -105,15 +105,11 @@
             </div>
         </div>
 
-        <div class="bg-dark text-white text-center py-4 mb-0">
-            Copyright &copy; <span id="year"></span> Dhart Academy
+        <div class="bg-black text-white text-center py-4 mb-0">
+            Copyright &copy; <span id="copyright-year"></span> Dhart Academy
         </div>
 
     </footer>
 
-    <script>
-        // Get the current year for the copyright
-        $('#year').text(new Date().getFullYear());
-    </script>
 </body>
 </html>

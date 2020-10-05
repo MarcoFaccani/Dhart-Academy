@@ -1,0 +1,46 @@
+
+#home #home-hero p {
+    font-size: 1.3rem;
+}
+
+#home #home-dhart-fam {
+    border: 2px solid black;
+}
+
+.bg-applejack {
+    align-items: center;
+    min-height: calc(100vh - 105px);
+    background-size: cover !important;
+    background-position: center center !important;
+    background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1601732687/dhart-academy/applejack_jfhle2.jpg);
+    /*background-image:
+        -webkit-image-set(
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_256/v1601732687/dhart-academy/applejack_jfhle2.jpg) 1x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_512/v1601732687/dhart-academy/applejack_jfhle2.jpg) 2x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_768/v1601732687/dhart-academy/applejack_jfhle2.jpg) 3x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_1024/v1601732687/dhart-academy/applejack_jfhle2.jpg) 4x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_1280/v1601732687/dhart-academy/applejack_jfhle2.jpg) 5x
+        );
+    background-image:
+        image-set(
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_256/v1601732687/dhart-academy/applejack_jfhle2.jpg) 1x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_512/v1601732687/dhart-academy/applejack_jfhle2.jpg) 2x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_768/v1601732687/dhart-academy/applejack_jfhle2.jpg) 3x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_1024/v1601732687/dhart-academy/applejack_jfhle2.jpg) 4x,
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen,w_1280/v1601732687/dhart-academy/applejack_jfhle2.jpg) 5x
+        );*/
+}
+
+
+.oblique-line-white::before{
+    content: "";
+    z-index: 2;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    display: block;
+    border-color: rgba(0, 0, 0, 0) #fff;
+    border-width: 0 0 10vw calc(100vw - 17px);
+    border-style: solid;
+}

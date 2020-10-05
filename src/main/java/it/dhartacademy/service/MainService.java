@@ -1,6 +1,8 @@
 package it.dhartacademy.service;
 
 import it.dhartacademy.model.ContactForm;
+import it.dhartacademy.model.Review;
+import it.dhartacademy.repository.ReviewRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,9 +10,14 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Slf4j
 @Service
 public class MainService {
+
+    @Autowired
+    private ReviewRepository reviewRepository;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -35,5 +42,14 @@ public class MainService {
             throw ex;
         }
     }
+
+    public List<Review> getAllReviews() {
+        log.info("getAllReviews | Start");
+        List<Review> reviews = reviewRepository.findAll();
+        log.info("Review's number: {}", reviews.size());
+        log.info("getAllReviews | End");
+        return reviews;
+    }
+
 
 }

@@ -1,3 +1,51 @@
+body { overflow-x: hidden; }
+
+/* BACKGROUNDS */
+.bg-black { background: #1c1c1c !important; }
+
+/* TEXT RELATED */
+.text-shadow { text-shadow: 10px 1px 20px rgba(2, 2, 2, 1); }
+
+.brand-font{
+    font-family: 'octopus_boldregular';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 3rem;
+    text-shadow: 10px 1px 20px rgba(2, 2, 2, 1);
+}
+
+
+/* SPACE RELATED */
+.pb-6 { padding-bottom: 5rem!important; }
+.pt-6 { padding-top: 5rem!important; }
+.py-6 { padding-bottom: 5rem!important; padding-top: 5rem!important; }
+.pb-7 { padding-bottom: 7rem!important; }
+.pt-7 { padding-top: 7rem!important; }
+.py-7 { padding-bottom: 7rem!important; padding-top: 7rem!important; }
+.pb-8 { padding-bottom: 9rem!important; }
+.pt-8 { padding-top: 9rem!important; }
+.py-8 { padding-bottom: 9rem!important; padding-top: 9rem!important; }
+.pb-9 { padding-bottom: 11rem!important; }
+.pt-9 { padding-top: 11rem!important; }
+.py-9 { padding-bottom: 11rem!important; padding-top: 11rem!important; }
+
+
+.mb-6 { margin-bottom: 5rem!important; }
+.mt-6 { margin-top: 5rem!important; }
+.my-6 { margin-bottom: 5rem!important; margin-top: 5rem!important; }
+.mb-7 { margin-bottom: 7rem!important; }
+.mt-7 { margin-top: 7rem!important; }
+.my-7 { margin-bottom: 7rem!important; margin-top: 7rem!important; }
+
+.space-50{
+    height: 50px;
+    display: block;
+}
+.space-100{
+    height: 100px;
+    display: block;
+}
+
 .btn-gradient-blue {
     background-color: #5989e5;
     background-image: -webkit-gradient(linear, left top, right top, from(#5989e5), to(#37cfdc));
@@ -7,15 +55,30 @@
     border: none !important;
 }
 
-/*.navbar-text {
-    font-family: "SansSerif";
-    font-size: ;
-    font-weight: ;
+.box-shadow-black-2 {
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 }
 
-.footer-text {
-    font-family: "SansSerif";
-    font-size: ;
-    font-weight: ;
-}*/
+.box-shadow-black-1 {
+    -webkit-box-shadow: 1px 0px 20px rgba(2, 2, 2, 1);
+    -moz-box-shadow: 1px 0px 20px rgba(2, 2, 2, 1);
+    box-shadow: 1px 0px 20px rgba(2, 2, 2, 1);
+}
 
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}

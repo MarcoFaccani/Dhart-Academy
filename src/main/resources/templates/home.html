@@ -16,17 +16,224 @@
     <link th:href="@{/css/common.css}" rel="stylesheet"/>
     <link th:href="@{/css/home.css}" rel="stylesheet"/>
 </head>
-<body>
-    <div th:replace="navbar"></div>
-    <div th:replace="footer"></div>
+<body id="home">
+    <div th:replace="fragments/navbar"></div>
+
+    <div class="jumbotron jumbotron-fluid bg-applejack text-white text-center text-shadow">
+        <div class="container">
+            <h2 class="display-5">Accademia Arti Urbane</h2>
+            <h1 class="display-3 brand-font">DHART ACADEMY</h1>
+            <h3>#<span class="text-primary">QUALITY</span>overQUANTITY</h3>
+            <div class="space-50"></div>
+            <p class="lead">
+                Immergiti nella cultura delle arti urbane appassionandoti a questo <strong>stile di vita</strong> <br/>
+                <strong>Esprimi te stesso</strong> attraverso l’arte portando la tua <strong>passione</strong> ad un altro livello. <br/>
+                Arricchisci la tua esperienza con tanti artisti e <strong>divertiti</strong> con i tuoi amici! <br/>
+                Entra a far parte della nostra community!
+            </p>
+            <a href="/corsi" class="btn btn-gradient-blue">Scopri i nostri corsi</a>
+        </div>
+    </div>
+
+    <section id="home-hero" class="mb-7 mt-5">
+        <div class="container">
+            <h2 class="display-5 text-center mb-6">ESPERIENZE</h2>
+
+            <div class="row mb-7"> <!-- first hero row -->
+                <div class="col-lg-6 col-md-10 my-auto ml-0">
+                    <h2>Claudio <span class="text-primary">Baglioni</span></h2>
+                    <p>Il 29 Luglio 2019 Alessio Venditti, fondatore della Dhart-Academy, viene selezionato dal noto coreografo
+                        Giuliano Peparini per formare il corpo di ballo per la tournée "50 Al Centro" di Claudio Baglioni.</p>
+                    <div><a id="btn-modal-baglioni" href="#" class="btn btn-gradient-blue text-uppercase" data-toggle="modal" data-target="#modal-baglioni">Guarda il video!</a></div>
+                </div>
+                <div class="col-lg-6 col-md-10 ml-auto">
+                    <img
+                        data-sizes="auto"
+                        loading="lazy"
+                        th:attr="srcset=|
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'} 256w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'} 512w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'} 768w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'} 1024w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'} 1280w|"
+                        th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601812568/dhart-academy/baglioni-f2f_mmygma.jpg'}"
+                        class="lazyload img-fluid rounded box-shadow-black-2" alt="welcoming image"
+                    />
+                </div>
+            </div> <!-- end first hero row -->
+
+            <div class="row"> <!-- second hero row -->
+                <div class="col-lg-6 col-md-10 text-right my-auto ml-auto order-last">
+                    <h2>+30 Premi e Riconoscimenti <span class="text-primary">Internazionali</span></h2>
+                    <p>Olanda, Inghilterra, Danimarca, California, Sacramento, San Francisco, Seattle, Francia, New York,
+                        Polonia, Germania, Canada: sono solo alcuni dei paesi dove il nostro fondatore ha partecipato
+                        aggiudicandosi il primo posto a competizioni di livello nazionale e internazionale</p>
+                    <a href="#" class="btn btn-gradient-blue text-uppercase" data-toggle="modal" data-target="#modal-awards">Esplora i nostri successi</a>
+                </div>
+                <div class="col-lg-6 col-md-10">
+                    <img
+                        data-sizes="auto"
+                        loading="lazy"
+                        th:attr="srcset=|
+                        @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'} 256w,
+                        @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'} 512w,
+                        @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'} 768w,
+                        @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'} 1024w,
+                        @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'} 1280w|"
+                        th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601812925/dhart-academy/baglioni-2_jd5n3l.jpg'}"
+                        class="lazyload img-fluid rounded box-shadow-black-2" alt="welcoming image"
+                    />
+                </div>
+            </div> <!-- end second hero row -->
+        </div>
+    </section>
+
+
+    <section id="home-gym-structure" class="my-6">
+        <div class="container text-center">
+            <h2 class="text-primary text-uppercase">Familiarizza con la struttura</h2>
+            <p class="mb-5">Dhart Academy è di forte stampo urbano ma all’interno trovano spazio anche la danza, il teatro,
+                laboratori artistici di Djing, Graffiti e molto altro ancora!</p>
+
+            <!-- carousel -->
+            <div id="homeStructureCarousel" class="carousel slide box-shadow-black-1" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#homeStructureCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#homeStructureCarousel" data-slide-to="1"></li>
+                    <li data-target="#homeStructureCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="max-height: 600px">
+                        <img data-sizes="auto"
+                             loading="lazy"
+                             th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'} 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'} 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'} 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'} 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'} 1280w|"
+                             th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601747122/dhart-academy/struttura-sala_gurc8f.jpg'}"
+                             class="lazyload d-block w-100" alt="First slide"
+                        />
+                    </div>
+                    <div class="carousel-item" style="max-height: 600px">
+                        <img data-sizes="auto"
+                             loading="lazy"
+                             th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'} 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'} 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'} 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'} 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'} 1280w|"
+                             th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601747133/dhart-academy/struttura-reception_bqxxfe.jpg'}"
+                             class="lazyload d-block w-100" alt="Second slide"
+                        />
+                    </div>
+                    <div class="carousel-item" style="max-height: 600px">
+                        <img data-sizes="auto"
+                             loading="lazy"
+                             th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'} 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'} 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'} 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'} 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'} 1280w|"
+                             th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601747130/dhart-academy/struttura-sala-2_nfjwyp.jpg'}"
+                             class="lazyload d-block w-100" alt="Third slide"
+                        />
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#homeStructureCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Indietro</span>
+                </a>
+                <a class="carousel-control-next" href="#homeStructureCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Avanti</span>
+                </a>
+            </div> <!-- end carousel -->
+        </div>
+    </section>
+
+    <!-- oblique line -->
+    <section>
+        <div style="position: relative;">
+            <div class="oblique-line-white"></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="home-clients-reviews" class="bg-black text-white pt-8 pb-5 mt-6">
+        <div class="container text-center">
+            <h2 class="text-uppercase">Le recensioni dei nostri clienti</h2>
+            <p class="lead">Ascolta le opinioni dei nostri iscritti</p>
+
+            <!-- carousel reviews -->
+            <div id="homeCarouselReviews" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <th:block th:each="i: ${#numbers.sequence(0, reviews.size() - 1)}">
+                        <li data-target="#homeCarouselReviews" data-slide-to="${i}"
+                            th:classappend="${i}==0 ? active : '' "
+                        ></li>
+                    </th:block>
+                </ol>
+                <div class="carousel-inner mx-auto" style="max-width: 900px;">
+                    <th:block th:each="review, iterStat: ${reviews}">
+                        <div th:replace="fragments/utilities ::
+                        reviews(author=${review.author},message=${review.review})"></div>
+                    </th:block>
+                </div>
+                <a class="carousel-control-prev" href="#homeCarouselReviews" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Indietro</span>
+                </a>
+                <a class="carousel-control-next" href="#homeCarouselReviews" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Avanti</span>
+                </a>
+            </div> <!-- end carousel reviews -->
+        </div>
+    </section>
+
+    <section id="home-dhart-fam">
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <img data-sizes="auto"
+                     loading="lazy"
+                     th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'} 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'} 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'} 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'} 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'} 1280w|"
+                     th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601812606/dhart-academy/dhart-fam_sjbwil.jpg'}"
+                     class="lazyload d-block w-100" alt="Third slide"
+                />
+            </div>
+            <div class="col-lg-6 p-0">
+                <img data-sizes="auto"
+                     loading="lazy"
+                     th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'} 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'} 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'} 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'} 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'} 1280w|"
+                     th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601812877/dhart-academy/dhart-fam2_iljqjy.jpg'}"
+                     class="lazyload d-block w-100" alt="Third slide"
+                />
+            </div>
+        </div>
+    </section>
+
+    <div th:replace="fragments/footer"></div>
 
 <!-- Scripts -->
-    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
-    <script src="https://kit.fontawesome.com/f567dcb7ba.js" crossorigin="anonymous"></script> <!--TODO: mettere localmente -->
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="https://kit.fontawesome.com/f567dcb7ba.js" crossorigin="anonymous"></script> <!--TODO: mettere localmente -->
 
-    <script type="text/javascript" th:src="@{/js/lazysizes.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/common.js}"></script>
-
+<script type="text/javascript" th:src="@{/js/lazysizes.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/common.js}"></script>
 </body>
 </html>

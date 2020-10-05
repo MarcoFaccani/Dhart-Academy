@@ -35,6 +35,7 @@ public class AppController {
         log.info("Recupero la home-page");
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
+        model.addAttribute("reviews", mainService.getAllReviews());
         return "home";
     }
 
