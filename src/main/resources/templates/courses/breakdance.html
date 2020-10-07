@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <head>
+        <div th:replace="fragments/header :: head"></div>
+        <title>Breakdance</title>
+        <link th:href="@{/css/courses.css}" rel="stylesheet"/>
+    </head>
 </head>
 <body>
-
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="fragments/footer"></div>
 </body>
 </html>

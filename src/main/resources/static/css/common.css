@@ -1,5 +1,9 @@
 body { overflow-x: hidden; }
 
+#main-navbar a {
+    color: white;
+}
+
 /* BACKGROUNDS */
 .bg-black { background: #1c1c1c !important; }
 
@@ -53,6 +57,7 @@ body { overflow-x: hidden; }
     border-color: transparent !important;
     color: #fff;
     border: none !important;
+    border-radius: 5rem;
 }
 
 .box-shadow-black-2 {

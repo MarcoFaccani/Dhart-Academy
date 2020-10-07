@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<nav th:fragment="navbar" class="navbar navbar-expand-lg">
+<nav id="main-navbar" th:fragment="navbar" class="navbar navbar-expand-lg bg-black text-white">
     <div class="container">
         <!-- Logo and brand name -->
         <span class="navbar-brand">
@@ -30,28 +30,28 @@
         </button>
 
         <!-- navbar content -->
-        <div id="navbarContent" class="collapse navbar-collapse">
+        <div id="navbarContent" class="collapse navbar-collapse navbar-dark">
 
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav text-uppercase font-poppins mx-auto">
                 <li class="nav-item active">
                     <a href="/" class="nav-link">Home<span class="sr-only">(current)</span></a>
                 </li>
 
                 <!-- corsi dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbar-courses-dropdown" role="button"
+                    <li><a class="nav-link dropdown-toggle" href="#" id="navbar-courses-dropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Corsi
-                    </a>
+                    </a></li>
                     <div class="dropdown-menu" aria-labelledby="navbar-courses-dropdown">
-                        <a class="dropdown-item" href="/corsi/breakdance">Breakdance</a>
-                        <a class="dropdown-item" href="/corsi/hiphop">Hip Hop</a>
-                        <a class="dropdown-item" href="/corsi/house">House</a>
-                        <a class="dropdown-item" href="/corsi/dancehall">Dancehall</a>
-                        <a class="dropdown-item" href="/corsi/vouge">Vouge</a>
-                        <a class="dropdown-item" href="/corsi/floorwork">Floorwork</a>
-                        <a class="dropdown-item" href="/corsi/dj">DJ</a>
-                        <a class="dropdown-item" href="/corsi/graffiti">Graffiti</a>
+                        <a class="dropdown-item" href="/courses/breakdance">Breakdance</a>
+                        <a class="dropdown-item" href="/courses/hiphop">Hip Hop</a>
+                        <a class="dropdown-item" href="/courses/house">House</a>
+                        <a class="dropdown-item" href="/courses/dancehall">Dancehall</a>
+                        <a class="dropdown-item" href="/courses/vouge">Vouge</a>
+                        <a class="dropdown-item" href="/courses/floorwork">Floorwork</a>
+                        <a class="dropdown-item" href="/courses/dj">DJ</a>
+                        <a class="dropdown-item" href="/courses/graffiti">Graffiti</a>
                     </div>
                 </li>
 
@@ -64,7 +64,7 @@
             <!-- navbar contatti -->
             <ul class="list-inline ml-auto mb-0">
                 <li class="list-inline-item">
-                    <a href="/contatti" class="btn btn-gradient-blue px-5 py-2 my-2">Contatti</a>
+                    <a href="/contatti" class="btn btn-gradient-blue text-uppercase px-5 py-2 my-2">Contatti</a>
                 </li>
                 <!-- social media icons -->
                 <div class="navbar-icone-social-media d-flex justify-content-center">

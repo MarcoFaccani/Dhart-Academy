@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <th:block th:fragment="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- da approfondire -->
+        <meta name="HandheldFriendly" content="true"> <!-- da approfondire -->
+
+        <meta name="author" content="Marco Faccani"/>
+        <meta name="keywords" content="dhalsim, dhart academy, bboy, dance, hiphop, perugia"/>
+
+        <!-- Stylesheets -->
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/css/common.css}" rel="stylesheet"/>
+        <link th:href="@{/css/fonts.css}" rel="stylesheet"/>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+        <script src="https://kit.fontawesome.com/f567dcb7ba.js" crossorigin="anonymous"></script> <!--TODO: mettere localmente -->
+
+        <script type="text/javascript" th:src="@{/js/lazysizes.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    </th:block>
+
+</body>
+</html>

@@ -4,8 +4,13 @@
 }
 
 #home #home-dhart-fam {
-    border: 2px solid black;
+    border-bottom: 2px solid black;
 }
+
+#home .btn-gradient-blue {
+    padding: 0.5rem 2.5rem;
+}
+
 
 .bg-applejack {
     align-items: center;

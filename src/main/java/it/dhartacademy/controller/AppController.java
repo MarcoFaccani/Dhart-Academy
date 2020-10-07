@@ -39,6 +39,17 @@ public class AppController {
         return "home";
     }
 
+
+    @GetMapping("/courses/breakdance")
+    public String getCourseBreakdance(Model model) {
+        log.info("Recupero corsi/breakdance");
+        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
+        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
+        return "breakdance";
+    }
+
+
+
     @GetMapping("/contatti")
     public String getContactPage(Model model) {
         model.addAttribute("formContatti", new ContactForm());
