@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-breakdance text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
+    <div class="container mt-7">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-lg-7">
+
+                <!-- Preheading -->
+                <p class="font-weight-medium text-center text-xs text-uppercase text-white text-muted animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                    apprendi
+                </p>
+
+                <!-- Heading -->
+                <h1 class="display-3 text-white text-center mb-4 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load">
+                    <th:block th:text="${courseName}"></th:block>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="lead text-white text-muted text-center mb-5 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load">
+                    <th:block th:text="${motivatorText}"></th:block>
+                </p>
+
+                <!-- Button -->
+                <p class="text-center mb-0 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
+                    <a href="https://themes.getbootstrap.com/product/incline-landing-page-set/" target="_blank" class="btn btn-outline-primary text-white">
+                        Purchase now
+                    </a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

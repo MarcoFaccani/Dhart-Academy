@@ -1,6 +1,7 @@
 package it.dhartacademy.service;
 
 import it.dhartacademy.model.ContactForm;
+import it.dhartacademy.model.CourseShowcase;
 import it.dhartacademy.model.Review;
 import it.dhartacademy.repository.ReviewRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,12 @@ public class MainService {
 
     @Value("${email.address.customer-service}")
     private String customerServiceAddress;
+
+    @Value("${url.cloudinary.base}")
+    private String cloudinaryBaseUrl;
+
+    @Value("${cloudinary.transformation.common}")
+    private String cloudinaryTransfCommon;
 
     public void sendNotification(final ContactForm contactForm) {
         SimpleMailMessage email = new SimpleMailMessage();
@@ -52,4 +59,20 @@ public class MainService {
     }
 
 
+    public CourseShowcase getShowcaseBreakdance() {
+        CourseShowcase showcase = new CourseShowcase();
+        showcase.setName("breakdance");
+        showcase.setImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812943/dhart-academy/one-hand-babyfreeze_vfkuh5.jpg");
+        showcase.setMotivatorText("Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!");
+        log.info("BreakdanceShowcase object: {}", showcase);
+        return showcase;
+    }
+
+    public CourseShowcase getShowcaseDancehall() {
+        CourseShowcase showcase = new CourseShowcase();
+        showcase.setName("dancehall");
+        showcase.setImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812549/dhart-academy/dancehall-girls_mxovvy.jpg");
+        log.info("DancehallShowcase object: {}", showcase);
+        return showcase;
+    }
 }

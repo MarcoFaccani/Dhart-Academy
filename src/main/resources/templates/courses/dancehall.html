@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <div th:replace="fragments/header :: head"></div>
+    <title>Dancehall</title>
+    <link th:href="@{/css/courses.css}" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-objective">
+
+    <div class="bg-overlay"></div>
+
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div th:replace="fragments/courses :: showcase(courseName=${showcase.name}, imageURL=${showcase.imageURL}, motivatorText=${showcase.motivatorText})"></div>
+
+    <div th:replace="fragments/footer"></div>
 
 </body>
 </html>
