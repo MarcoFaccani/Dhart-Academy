@@ -28,7 +28,7 @@ public class AppController {
     @Value("${cloudinary.transformation.common}")
     private String cloudinaryTransfCommon;
 
-//____________________________________________________________________________________________________________________
+//____________________________________________PAGE GETTERS________________________________________________________________________
 
     @GetMapping("/")
     public String getHomePage(Model model) {
@@ -39,23 +39,25 @@ public class AppController {
         return "home";
     }
 
+    @GetMapping("/contact")
+    public String getContactPage(Model model) {
+        log.info("Recupero la pagina contatti");
+        model.addAttribute("formContatti", new ContactForm());
+        return "contact";
+    }
 
     @GetMapping("/courses/breakdance")
     public String getCourseBreakdance(Model model) {
         log.info("Recupero corsi/breakdance");
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
-        return "breakdance";
+        return "/courses/breakdance";
     }
 
 
 
-    @GetMapping("/contatti")
-    public String getContactPage(Model model) {
-        model.addAttribute("formContatti", new ContactForm());
-        log.info("Recupero la pagina contatti");
-        return "contact";
-    }
+    //____________________________________________________________________________________________________________________
+
 
     //TODO: aggiornare pagina contatti affinché rispecci il pojo ContactForm
     @PostMapping("/send-email")

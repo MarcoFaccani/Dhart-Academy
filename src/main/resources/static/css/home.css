@@ -1,20 +1,10 @@
+#home #home-hero p { font-size: 1.3rem; }
 
-#home #home-hero p {
-    font-size: 1.3rem;
-}
-
-#home #home-dhart-fam {
-    border-bottom: 2px solid black;
-}
-
-#home .btn-gradient-blue {
-    padding: 0.5rem 2.5rem;
-}
-
+#home #home-dhart-fam { border-bottom: 2px solid black; }
 
 .bg-applejack {
     align-items: center;
-    min-height: calc(100vh - 105px);
+    min-height: calc(100vh); /* calc(100vh - 105px); */
     background-size: cover !important;
     background-position: center center !important;
     background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1601732687/dhart-academy/applejack_jfhle2.jpg);

@@ -1,14 +1,142 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <head>
-        <div th:replace="fragments/header :: head"></div>
-        <title>Breakdance</title>
-        <link th:href="@{/css/courses.css}" rel="stylesheet"/>
-    </head>
+    <div th:replace="fragments/header :: head"></div>
+    <title>Breakdance</title>
+    <link th:href="@{/css/courses.css}" rel="stylesheet"/>
 </head>
-<body>
-    <div th:replace="fragments/navbar :: navbar"></div>
+<body class="font-objective">
+
+    <div class="bg-overlay"></div>
+
+    <nav id="main-navbar" th:fragment="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container pb-2" style="border-bottom: 1px solid white">
+            <!-- Logo and brand name -->
+            <span class="navbar-brand">
+                  <a href="/" class="navbar-brand">
+                      <img
+                              data-sizes="auto"
+                              loading="lazy"
+                              th:attr="srcset=|
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601743214/dhart-academy/logo-resized_kcg9tz.png'} 256w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1601743214/dhart-academy/logo-resized_kcg9tz.png'} 512w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1601743214/dhart-academy/logo-resized_kcg9tz.png'} 768w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1601743214/dhart-academy/logo-resized_kcg9tz.png'} 1024w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1601743214/dhart-academy/logo-resized_kcg9tz.png'} 1280w|"
+                              th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1601743214/dhart-academy/logo-resized_kcg9tz.png'}"
+                              class="lazyload img-fluid rounded-circle" width="70" alt="logo"
+                      />
+                      Dhart Academy
+                  </a>
+                </span>
+
+            <!-- toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar content -->
+            <div id="navbarContent" class="collapse navbar-collapse">
+
+                <ul class="navbar-nav text-uppercase font-poppins mx-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Home<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <!-- corsi dropdown -->
+                    <li class="nav-item dropdown text-dark">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbar-courses-dropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Corsi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-courses-dropdown">
+                            <a class="dropdown-item" href="/courses/breakdance">Breakdance</a>
+                            <a class="dropdown-item" href="/courses/hiphop">Hip Hop</a>
+                            <a class="dropdown-item" href="/courses/house">House</a>
+                            <a class="dropdown-item" href="/courses/dancehall">Dancehall</a>
+                            <a class="dropdown-item" href="/courses/vouge">Vouge</a>
+                            <a class="dropdown-item" href="/courses/floorwork">Floorwork</a>
+                            <a class="dropdown-item" href="/courses/dj">DJ</a>
+                            <a class="dropdown-item" href="/courses/graffiti">Graffiti</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Octopus Mind</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Groovz</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                </ul>
+
+                <!-- navbar contatti -->
+                <ul class="list-inline ml-auto mb-0">
+                    <li class="list-inline-item">
+                        <a href="/contatti" class="btn btn-gradient-blue text-uppercase px-5 py-2 my-2">Contatti</a>
+                    </li>
+                    <!-- social media icons -->
+                    <div class="navbar-icone-social-media d-flex justify-content-center">
+                        <li class="list-inline-item p-1">
+                            <a href="https://www.facebook.com/DhartAcademy">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item p-1">
+                            <a href="https://www.instagram.com/dhartacademy">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item p-1">
+                            <a href="https://www.youtube.com/DhartAcademy">
+                                <i class="fab fa-youtube fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item p-1">
+                            <a href="https://twitter.com/dhartacademy">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREAKDANCE HERO -->
+    <div class="jumbotron jumbotron-fluid bg-breakdance text-white text-center text-shadow">
+        <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-lg-7">
+
+                <!-- Preheading -->
+                <p class="font-weight-medium text-center text-xs text-uppercase text-white text-muted animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                    apprendi
+                </p>
+
+                <!-- Heading -->
+                <h1 class="display-3 text-white text-center mb-4 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load">
+                    Breakdance
+                </h1>
+
+                <!-- Subheading -->
+                <p class="lead text-white text-muted text-center mb-5 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load">
+                    Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!
+                </p>
+
+                <!-- Button -->
+                <p class="text-center mb-0 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
+                    <a href="https://themes.getbootstrap.com/product/incline-landing-page-set/" target="_blank" class="btn btn-outline-primary text-white">
+                        Purchase now
+                    </a>
+                </p>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
     <div th:replace="fragments/footer"></div>
 </body>
 </html>
