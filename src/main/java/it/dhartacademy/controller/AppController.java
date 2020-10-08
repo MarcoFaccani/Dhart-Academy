@@ -51,7 +51,7 @@ public class AppController {
         log.info("Recupero corsi/breakdance");
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
-        model.addAttribute("showcase", mainService.getShowcaseBreakdance());
+        model.addAttribute("courseModel", mainService.getBreakdanceModel());
         model.addAttribute("packages", mainService.getPackages());
         return "/courses/breakdance";
     }
@@ -61,7 +61,7 @@ public class AppController {
         log.info("Recupero corsi/dancehall");
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
-        model.addAttribute("showcase", mainService.getShowcaseDancehall());
+        model.addAttribute("courseModel", mainService.getShowcaseDancehall());
         model.addAttribute("packages", mainService.getPackages());
         return "/courses/dancehall";
     }

@@ -8,7 +8,7 @@
             <div class="col-md-8 col-lg-7">
 
                 <!-- Preheading -->
-                <p class="font-weight-medium text-center text-xs text-uppercase text-white">
+                <p class="text-center text-uppercase text-white">
                     apprendi
                 </p>
 
@@ -75,6 +75,54 @@
                 </div>
             </th:block>
         </div>
+    </div>
+</div>
+
+
+<div th:fragment="teachers" class="container">
+    <h2 class="display-4 text-uppercase text-center my-6">apprendi dai <span class="text-primary">migliori</span></h2>
+    <div class="row justify-content-center">
+        <th:block th:each="teacher, iterStat: ${courseModel.teachers}">
+
+            <div class="col-lg-5 col-md-6 col-sm-9 mb-5">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Esperienza:
+                        <th:block th:text="${teacher.experience}"></th:block>
+                        anni
+                    </div>
+                    <div class="card-body">
+                        <h4 th:text="${teacher.name} + ' ' + ${teacher.surname} " style="font-weight: 600"></h4>
+                        <p th:text="${teacher.artName}" class="lead"></p>
+                        <p th:text="${teacher.biography}"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center">
+                            <div class="px-4">
+                                <a th:href="${teacher.facebook}">
+                                    <i class="fab fa-facebook fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="px-4">
+                                <a th:href="${teacher.instagram}">
+                                    <i class="fab fa-instagram fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="px-4">
+                                <a th:href="${teacher.youtube}">
+                                    <i class="fab fa-youtube fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="px-4">
+                                <a th:href="${teacher.twitter}">
+                                    <i class="fab fa-twitter fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </th:block>
     </div>
 </div>
 

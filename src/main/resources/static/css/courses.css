@@ -44,4 +44,7 @@
 }
 
 
-
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+    #showcase .display-3 { font-size: 2.5rem; font-weight: 500;}
+}

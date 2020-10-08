@@ -11,7 +11,7 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-    <div th:replace="fragments/courses :: showcase(courseName=${showcase.name}, imageURL=${showcase.imageURL}, motivatorText=${showcase.motivatorText})"></div>
+    <div th:replace="fragments/courses :: showcase(courseName=${courseModel.name}, imageURL=${courseModel.showcaseImageURL}, motivatorText=${courseModel.showcaseMotivatorText})"></div>
 
     <div th:replace="fragments/courses :: packages"></div>
 

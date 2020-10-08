@@ -9,10 +9,14 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-    <!-- BREAKDANCE HERO -->
-    <div th:replace="fragments/courses :: showcase(courseName=${showcase.name}, imageURL=${showcase.imageURL}, motivatorText=${showcase.motivatorText})"></div>
+    <!-- SHOWCASE -->
+    <div th:replace="fragments/courses :: showcase(courseName=${courseModel.name}, imageURL=${courseModel.showcaseImageURL}, motivatorText=${courseModel.showcaseMotivatorText})"></div>
 
-    <!-- PACKAGES -->
+    <!-- TEACHERS -->
+    <div th:replace="fragments/courses :: teachers"></div>
+
+
+        <!-- PACKAGES -->
     <div th:replace="fragments/courses :: packages"></div>
 
     <div th:replace="fragments/footer"></div>

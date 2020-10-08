@@ -2,7 +2,7 @@ package it.dhartacademy.service;
 
 import it.dhartacademy.model.ContactForm;
 import it.dhartacademy.model.CoursePackage;
-import it.dhartacademy.model.CourseShowcase;
+import it.dhartacademy.model.CourseModel;
 import it.dhartacademy.model.Review;
 import it.dhartacademy.repository.ReviewRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -74,21 +74,32 @@ public class MainService {
     }
 
 
-    public CourseShowcase getShowcaseBreakdance() {
-        CourseShowcase showcase = new CourseShowcase();
-        showcase.setName("breakdance");
-        showcase.setImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812943/dhart-academy/one-hand-babyfreeze_vfkuh5.jpg");
-        showcase.setMotivatorText("Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!");
-        log.info("BreakdanceShowcase object: {}", showcase);
-        return showcase;
+    public CourseModel getBreakdanceModel() {
+        CourseModel model = new CourseModel();
+        model.setName("breakdance");
+        model.setShowcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812943/dhart-academy/one-hand-babyfreeze_vfkuh5.jpg");
+        model.setShowcaseMotivatorText("Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!");
+        model.setTeachers(Arrays.asList(new CourseModel.CourseTeacher(
+                "Alessio",
+                "Venditti",
+                " bboy Dhalsim",
+                "Classe '89 nato e cresciuto ad Ostia, ora vive a Perugia. Da 18 anni attivo nella scena della Breakdance nazionale ed internazionale, fondatore e membro della crew lidense Ostia Street Rockerz e della Flexible Flav crew californiana",
+                "18",
+                "https://www.facebook.com/DhartAcademy",
+                "https://www.instagram.com/dhartacademy",
+                "https://www.youtube.com/DhartAcademy",
+                "https://twitter.com/dhartacademy"
+                )));
+        log.info("BreakdanceModel: {}", model);
+        return model;
     }
 
-    public CourseShowcase getShowcaseDancehall() {
-        CourseShowcase showcase = new CourseShowcase();
-        showcase.setName("dancehall");
-        showcase.setImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812549/dhart-academy/dancehall-girls_mxovvy.jpg");
-        log.info("DancehallShowcase object: {}", showcase);
-        return showcase;
+    public CourseModel getShowcaseDancehall() {
+        CourseModel model = new CourseModel();
+        model.setName("dancehall");
+        model.setShowcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812549/dhart-academy/dancehall-girls_mxovvy.jpg");
+        log.info("DancehallModel : {}", model);
+        return model;
     }
 
     public List<CoursePackage> getPackages() {
