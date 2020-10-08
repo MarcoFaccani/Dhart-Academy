@@ -52,6 +52,7 @@ public class AppController {
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("showcase", mainService.getShowcaseBreakdance());
+        model.addAttribute("packages", mainService.getPackages());
         return "/courses/breakdance";
     }
 
@@ -61,6 +62,7 @@ public class AppController {
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("showcase", mainService.getShowcaseDancehall());
+        model.addAttribute("packages", mainService.getPackages());
         return "/courses/dancehall";
     }
 

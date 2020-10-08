@@ -50,6 +50,16 @@ body {
 .mb-7 { margin-bottom: 7rem!important; }
 .mt-7 { margin-top: 7rem!important; }
 .my-7 { margin-bottom: 7rem!important; margin-top: 7rem!important; }
+.mb-8 { margin-bottom: 8rem!important; }
+.mt-8 { margin-top: 8rem!important; }
+.my-8 { margin-bottom: 8rem!important; margin-top: 8rem!important; }
+.mb-9 { margin-bottom: 9rem!important; }
+.mt-9 { margin-top: 9rem!important; }
+.my-9 { margin-bottom: 9rem!important; margin-top: 9rem!important; }
+.mb-11 { margin-bottom: 11rem!important; }
+.mt-11 { margin-top: 11rem!important; }
+.my-11 { margin-bottom: 11rem!important; margin-top: 11rem!important; }
+
 
 .space-50{
     height: 50px;

@@ -2,37 +2,82 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-breakdance text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
-    <div class="container mt-7">
+<div id="showcase" th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-course-image text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
+    <div class="container mt-11">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-8 col-lg-7">
 
                 <!-- Preheading -->
-                <p class="font-weight-medium text-center text-xs text-uppercase text-white text-muted animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                <p class="font-weight-medium text-center text-xs text-uppercase text-white">
                     apprendi
                 </p>
 
                 <!-- Heading -->
-                <h1 class="display-3 text-white text-center mb-4 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load">
+                <h1 class="display-3 text-uppercase text-white text-center mb-4">
                     <th:block th:text="${courseName}"></th:block>
                 </h1>
 
-                <!-- Subheading -->
-                <p class="lead text-white text-muted text-center mb-5 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load">
+                <!-- Subheading
+                <p class="lead text-white text-center mb-5">
                     <th:block th:text="${motivatorText}"></th:block>
-                </p>
+                </p> -->
 
                 <!-- Button -->
-                <p class="text-center mb-0 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
-                    <a href="https://themes.getbootstrap.com/product/incline-landing-page-set/" target="_blank" class="btn btn-outline-primary text-white">
-                        Purchase now
-                    </a>
+                <p class="btn-group text-uppercase text-center mb-0">
+                    <a href="/courses/calendar"  target="_blank" class="btn-download-calendar btn btn-light text-dark">Scarica Orari</a>
+                    <a href="/contact" class="btn-contattaci btn btn-gradient-blue">Contattaci Ora!</a>
                 </p>
 
             </div>
         </div>
     </div>
 </div>
+
+
+<div id="packages" th:fragment="packages" class="text-center text-dark my-6">
+    <div class="container">
+        <h2 class="display-4 text-uppercase">I Nostri <span class="text-primary"> Pacchetti</span></h2>
+        <p class="col-md-8 mx-auto mb-6">
+            Confronta e scegli quello che fa più al caso tuo! <br> Hai eseginze particolari? <a href="/contatti">Contattaci</a> e faremo il possibile per venirti incontro!
+        </p>
+
+        <div class="row text-white">
+            <th:block th:each="package, iterStat: ${packages}">
+                <div class="col-lg-4 col-md-6 col-sm-9 mx-auto mb-5"> <!-- style="border: 3px solid black; padding: 1rem;" -->
+                    <div class="card bg-black mx-auto">
+                        <div class="card-header">
+                            <h3 th:text="${package.name}"></h3>
+                        </div>
+                        <img
+                            data-sizes="auto"
+                            loading="lazy"
+                            th:src="@{${package.packageLogoURL}}"
+                            class="lazyload card-img-top img-fluid w-75 m-auto" alt="" />
+
+                        <div class="card-body" style="background-image: url('https://res.cloudinary.com/facca/image/upload/v1602164196/dhart-academy/mountains_hhyzhr.jpg');">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <th:block th:text="${package.includedCourses}"></th:block>
+                                    corsi (<th:block th:text="${package.hoursPerWeek}"></th:block>H settimana)
+                                </li>
+                                <li class="list-group-item">
+                                    <th:block th:text="${package.openTrainingDays}"></th:block> open training
+                                </li>
+                                <li class="list-group-item">
+                                    Iscrizione Socio / Assicurazione
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            €<th:block th:text="${package.price}"></th:block>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>

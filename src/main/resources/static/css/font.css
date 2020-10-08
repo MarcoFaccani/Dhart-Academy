@@ -19,14 +19,14 @@
     url('../fonts/poppins/poppins-v13-latin-regular.woff') format('woff');
 }
 
-@font-face {
+/*@font-face {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     src: local('Poppins Bold'), local('Poppins-Bold'),
     url('../fonts/poppins/poppins-v13-latin-700.woff2') format('woff2'),
     url('../fonts/poppins/poppins-v13-latin-700.woff') format('woff');
-}
+}*/
 
 /*@font-face {
     font-family: 'Objective';
@@ -48,6 +48,6 @@
     font-family: 'Objective';
     font-style: normal;
     font-weight: 600;
-    src: local('Objective Regular'), local('Objective-Medium'),
+    src: local('Objective Regular'), local('Objective-Bold'),
     url('../fonts/objective/Objective-Bold.woff2') format('woff2');
 }
