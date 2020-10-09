@@ -2,18 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div id="showcase" th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-course-image text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
+<div id="showcase" th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-image-showcase text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
     <div class="container mt-11">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-8 col-lg-7">
 
                 <!-- Preheading -->
-                <p class="text-center text-uppercase text-white">
+                <p class="text-center text-uppercase">
                     apprendi
                 </p>
 
                 <!-- Heading -->
-                <h1 class="display-3 text-uppercase text-white text-center mb-4">
+                <h1 class="display-3 text-uppercase mb-4">
                     <th:block th:text="${courseName}"></th:block>
                 </h1>
 
@@ -23,7 +23,7 @@
                 </p> -->
 
                 <!-- Button -->
-                <p class="btn-group text-uppercase text-center mb-0">
+                <p class="btn-group text-uppercase mb-0">
                     <a href="/courses/calendar"  target="_blank" class="btn-download-calendar btn btn-light text-dark">Scarica Orari</a>
                     <a href="/contact" class="btn-contattaci btn btn-gradient-blue">Contattaci Ora!</a>
                 </p>
@@ -91,6 +91,20 @@
                         <th:block th:text="${teacher.experience}"></th:block>
                         anni
                     </div>
+                    <img
+                        data-sizes="auto"
+                        loading="lazy"
+                        th:attr="srcset=|
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/' + ${teacher.closeUpURL} } 256w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/' + ${teacher.closeUpURL} } 512w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/' + ${teacher.closeUpURL} } 768w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/' + ${teacher.closeUpURL} } 1024w,
+                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/' + ${teacher.closeUpURL} } 1280w|"
+                        th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto/' + ${teacher.closeUpURL} }"
+                        class="lazyload img-fluid rounded-circle mx-auto mt-3"
+                        style="width: 8rem;"
+                        alt="image teacher"
+                    />
                     <div class="card-body">
                         <h4 th:text="${teacher.name} + ' ' + ${teacher.surname} " style="font-weight: 600"></h4>
                         <p th:text="${teacher.artName}" class="lead"></p>

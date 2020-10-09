@@ -85,6 +85,7 @@ public class MainService {
                 " bboy Dhalsim",
                 "Classe '89 nato e cresciuto ad Ostia, ora vive a Perugia. Da 18 anni attivo nella scena della Breakdance nazionale ed internazionale, fondatore e membro della crew lidense Ostia Street Rockerz e della Flexible Flav crew californiana",
                 "18",
+                "v1602192184/dhart-academy/dhalsim-volto_qqagj4.png",
                 "https://www.facebook.com/DhartAcademy",
                 "https://www.instagram.com/dhartacademy",
                 "https://www.youtube.com/DhartAcademy",

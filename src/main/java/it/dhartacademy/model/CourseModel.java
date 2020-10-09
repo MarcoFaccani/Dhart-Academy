@@ -20,6 +20,7 @@ public class CourseModel {
         private String artName;
         private String biography;
         private String experience;
+        private String closeUpURL;
 
         private String facebook;
         private String instagram;

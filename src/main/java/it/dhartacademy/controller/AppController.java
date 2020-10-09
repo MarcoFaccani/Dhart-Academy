@@ -42,6 +42,8 @@ public class AppController {
     @GetMapping("/contact")
     public String getContactPage(Model model) {
         log.info("Recupero la pagina contatti");
+        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
+        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("formContatti", new ContactForm());
         return "contact";
     }
