@@ -30,29 +30,33 @@
     <div id="email-form" class="pt-7 mb-7">
         <div class="container text-center">
             <h2 class="display-4 text-uppercase">Parliamo</h2>
-            <p class="text-uppercase mb-5">faremo del nostro meglio per risponderti in 24/48H</p>
-            <form class="needs-validation" novalidate>
-                <div class="row">
+            <p class="text-uppercase ">faremo del nostro meglio per risponderti in 24/48H</p>
+
+            <p th:if="${param.sent}" class="bg-success email-feedback">Grazie <span th:text="${param.recipientName}"></span>, sarai contattato al più presto!</p>
+            <!--p th:unless="${param.sent}" class="bg-danger email-feedback">Ops! Qualcosa è andato storto. Perfavore riprovare tra 1 minuto.</p-->
+
+            <form th:action="@{/contact/send-email}" th:object="${contactForm}" method="post" class="needs-validation" novalidate>
+                <div class="row mt-5">
                     <div class="col-10 mx-auto">
                         <div class="row mx-auto">
                             <div class="col-lg-6 col-sm-10">
-                                <input type="text" class="form-control" placeholder="Nome" required>
+                                <input type="text" th:field="*{name}" class="form-control" placeholder="Nome" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
                             <div class="col-lg-6 col-sm-10">
-                                <input type="text" class="form-control" placeholder="Cognome" required>
+                                <input type="text"  th:field="*{surname}" class="form-control" placeholder="Cognome" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
                             <div class="col-lg-6 col-sm-10">
-                                <input type="email" class="form-control" placeholder="La vostra email" required>
+                                <input type="email" th:field="*{email}" class="form-control" placeholder="La vostra email" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
                             <div class="col-lg-6 col-sm-10">
-                                <input type="number" pattern=".{10}" class="form-control" placeholder="Recapito telefonico" required>
+                                <input type="number" th:field="*{phoneNumber}" class="form-control" placeholder="Recapito telefonico" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
                             <div class="col-lg-12">
-                                <textarea type="text" class="form-control" style="height: 150px;" placeholder="Come possiamo aiutarvi?" required></textarea>
+                                <textarea type="text" th:field="*{message}" class="form-control" style="height: 150px;" placeholder="Come possiamo aiutarvi?" required></textarea>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
                             <div class="col-lg-6 col-sm-10 mx-auto">

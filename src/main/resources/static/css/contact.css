@@ -9,3 +9,12 @@
 .invalid-feedback {
     text-align: left;
 }
+
+.email-feedback {
+    color: white;
+    padding: 0.5rem;
+    margin: 1.5rem auto;
+    width: 50%;
+    border-radius: .25rem;
+}
+

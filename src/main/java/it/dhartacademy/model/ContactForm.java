@@ -27,9 +27,6 @@ public class ContactForm {
     @Size(min = 10, max = 13, message = "Telefono invalido: necessarie 10 cifre")
     private String phoneNumber;
 
-    @NotBlank(message = "Selezionare motivo di contatto")
-    private String reasonForContact;
-
     @NotBlank(message = "Messaggio non può essere vuoto")
     private String message;
 }

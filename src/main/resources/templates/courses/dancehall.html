@@ -6,16 +6,15 @@
     <link th:href="@{/css/courses.css}" rel="stylesheet"/>
 </head>
 <body class="font-objective">
-
-    <div class="bg-overlay"></div>
-
     <div th:replace="fragments/navbar :: navbar"></div>
 
     <div th:replace="fragments/courses :: showcase(courseName=${courseModel.name}, imageURL=${courseModel.showcaseImageURL}, motivatorText=${courseModel.showcaseMotivatorText})"></div>
 
+    <!-- TEACHERS -->
+    <div th:replace="fragments/courses :: teachers"></div>
+
     <div th:replace="fragments/courses :: packages"></div>
 
     <div th:replace="fragments/footer"></div>
-
 </body>
 </html>
