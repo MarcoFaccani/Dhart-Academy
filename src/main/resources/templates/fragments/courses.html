@@ -2,143 +2,150 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div id="showcase" th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-image-showcase text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
-    <div class="container mt-11">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-8 col-lg-7">
+    <div id="showcase" th:fragment="showcase(courseName, imageURL, motivatorText)" class="jumbotron jumbotron-fluid bg-image-showcase text-white text-center text-shadow" th:style="'background-image: url(' + ${imageURL} + ');'">
+        <div class="container mt-11">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8 col-lg-7">
 
-                <!-- Preheading -->
-                <p class="text-center text-uppercase">
-                    apprendi
-                </p>
+                    <!-- Preheading -->
+                    <p class="text-center text-uppercase">
+                        apprendi
+                    </p>
 
-                <!-- Heading -->
-                <h1 class="display-3 text-uppercase mb-4">
-                    <th:block th:text="${courseName}"></th:block>
-                </h1>
+                    <!-- Heading -->
+                    <h1 class="display-3 text-uppercase mb-4">
+                        <th:block th:text="${courseName}"></th:block>
+                    </h1>
 
-                <!-- Subheading
-                <p class="lead text-white text-center mb-5">
-                    <th:block th:text="${motivatorText}"></th:block>
-                </p> -->
+                    <!-- Subheading
+                    <p class="lead text-white text-center mb-5">
+                        <th:block th:text="${motivatorText}"></th:block>
+                    </p> -->
 
-                <!-- Button -->
-                <p class="btn-group text-uppercase mb-0">
-                    <a href="/courses/calendar"  target="_blank" class="btn-download-calendar btn btn-light text-dark">Scarica Orari</a>
-                    <a href="/contact" class="btn-contattaci btn btn-gradient-blue">Contattaci Ora!</a>
-                </p>
+                    <!-- Button -->
+                    <p class="btn-group text-uppercase mb-4">
+                        <a href="/courses/calendar"  target="_blank" class="btn-download-calendar btn btn-light text-dark">Scarica Orari</a>
+                        <a href="/contact" class="btn-contattaci btn btn-gradient-blue">Contattaci Ora!</a>
+                    </p>
 
+                    <!-- Video Modal Trigger -->
+                    <!--a class="d-block btn text-uppercase" data-toggle="modal" data-target="#modal-baglioni">
+                        <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                        </svg>
+                    </a-->
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<div id="packages" th:fragment="packages" class="text-center text-dark my-6">
-    <div class="container">
-        <h2 class="display-4 text-uppercase">I Nostri <span class="text-primary"> Pacchetti</span></h2>
-        <p class="col-md-8 mx-auto mb-6">
-            Confronta e scegli quello che fa più al caso tuo! <br> Hai eseginze particolari? <a href="/contatti">Contattaci</a> e faremo il possibile per venirti incontro!
-        </p>
+    <div id="packages" th:fragment="packages" class="text-center text-dark my-6">
+        <div class="container">
+            <h2 class="display-4 text-uppercase">I Nostri <span class="text-primary"> Pacchetti</span></h2>
+            <p class="col-md-8 mx-auto mb-6" style="font-size: 1.5rem">
+                Confronta e scegli quello che fa più al caso tuo! <br> Hai eseginze particolari? <a href="/contatti">Contattaci</a> e faremo il possibile per venirti incontro!
+            </p>
 
-        <div class="row text-white">
-            <th:block th:each="package, iterStat: ${packages}">
-                <div class="col-lg-4 col-md-6 col-sm-9 mx-auto mb-5"> <!-- style="border: 3px solid black; padding: 1rem;" -->
-                    <div class="card bg-black mx-auto">
-                        <div class="card-header">
-                            <h3 th:text="${package.name}"></h3>
+            <div class="row text-white">
+                <th:block th:each="package, iterStat: ${packages}">
+                    <div class="col-lg-4 col-md-6 col-sm-9 mx-auto mb-5"> <!-- style="border: 3px solid black; padding: 1rem;" -->
+                        <div class="card bg-black mx-auto">
+                            <div class="card-header text-uppercase">
+                                <h3 th:text="${package.name}"></h3>
+                            </div>
+                            <img
+                                data-sizes="auto"
+                                loading="lazy"
+                                th:src="@{${package.packageLogoURL}}"
+                                class="lazyload card-img-top img-fluid w-75 m-auto" alt="" />
+
+                            <div class="card-body" style="background-image: url('https://res.cloudinary.com/facca/image/upload/v1602164196/dhart-academy/mountains_hhyzhr.jpg');">
+                                <ul class="list-group list-group-flush" style="font-size: 1.2rem;">
+                                    <li class="list-group-item">
+                                        <th:block th:text="${package.includedCourses}"></th:block>
+                                        corsi (<th:block th:text="${package.hoursPerWeek}"></th:block>H settimana)
+                                    </li>
+                                    <li class="list-group-item">
+                                        <th:block th:text="${package.openTrainingDays}"></th:block> open training
+                                    </li>
+                                    <li class="list-group-item">
+                                        Iscrizione Socio / Assicurazione
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer" style="font-size: 1.5rem;">
+                                €<th:block th:text="${package.price}"></th:block>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:fragment="teachers" class="container">
+        <h2 class="display-4 text-uppercase text-center my-6">apprendi dai <span class="text-primary">migliori</span></h2>
+        <div class="row justify-content-center">
+            <th:block th:each="teacher, iterStat: ${courseModel.teachers}">
+
+                <div class="col-lg-5 col-md-6 col-sm-9 mb-5">
+                    <div class="card text-center">
+                        <div class="card-header text-uppercase" style="font-size: 1.2rem">
+                            Esperienza:
+                            <th:block th:text="${teacher.experience}"></th:block>
+                            anni
                         </div>
                         <img
                             data-sizes="auto"
                             loading="lazy"
-                            th:src="@{${package.packageLogoURL}}"
-                            class="lazyload card-img-top img-fluid w-75 m-auto" alt="" />
-
-                        <div class="card-body" style="background-image: url('https://res.cloudinary.com/facca/image/upload/v1602164196/dhart-academy/mountains_hhyzhr.jpg');">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <th:block th:text="${package.includedCourses}"></th:block>
-                                    corsi (<th:block th:text="${package.hoursPerWeek}"></th:block>H settimana)
-                                </li>
-                                <li class="list-group-item">
-                                    <th:block th:text="${package.openTrainingDays}"></th:block> open training
-                                </li>
-                                <li class="list-group-item">
-                                    Iscrizione Socio / Assicurazione
-                                </li>
-                            </ul>
+                            th:attr="srcset=|
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/' + ${teacher.closeUpURL} } 256w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/' + ${teacher.closeUpURL} } 512w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/' + ${teacher.closeUpURL} } 768w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/' + ${teacher.closeUpURL} } 1024w,
+                                @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/' + ${teacher.closeUpURL} } 1280w|"
+                            th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto/' + ${teacher.closeUpURL} }"
+                            class="lazyload img-fluid rounded-circle mx-auto mt-3"
+                            style="width: 8rem;"
+                            alt="image teacher"
+                        />
+                        <div class="card-body">
+                            <h4 class="text-uppercase" th:text="${teacher.name} + ' ' + ${teacher.surname} " style="font-weight: 600"></h4>
+                            <p th:text="${teacher.artName}" class="lead"></p>
+                            <p th:text="${teacher.biography}" class="text-justify" style="font-size: 1.1rem;"></p>
                         </div>
                         <div class="card-footer">
-                            €<th:block th:text="${package.price}"></th:block>
+                            <div class="d-flex justify-content-center">
+                                <div class="px-4">
+                                    <a th:href="${teacher.facebook}">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="px-4">
+                                    <a th:href="${teacher.instagram}">
+                                        <i class="fab fa-instagram fa-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="px-4">
+                                    <a th:href="${teacher.youtube}">
+                                        <i class="fab fa-youtube fa-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="px-4">
+                                    <a th:href="${teacher.twitter}">
+                                        <i class="fab fa-twitter fa-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </th:block>
         </div>
     </div>
-</div>
-
-
-<div th:fragment="teachers" class="container">
-    <h2 class="display-4 text-uppercase text-center my-6">apprendi dai <span class="text-primary">migliori</span></h2>
-    <div class="row justify-content-center">
-        <th:block th:each="teacher, iterStat: ${courseModel.teachers}">
-
-            <div class="col-lg-5 col-md-6 col-sm-9 mb-5">
-                <div class="card text-center">
-                    <div class="card-header">
-                        Esperienza:
-                        <th:block th:text="${teacher.experience}"></th:block>
-                        anni
-                    </div>
-                    <img
-                        data-sizes="auto"
-                        loading="lazy"
-                        th:attr="srcset=|
-                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/' + ${teacher.closeUpURL} } 256w,
-                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/' + ${teacher.closeUpURL} } 512w,
-                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/' + ${teacher.closeUpURL} } 768w,
-                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/' + ${teacher.closeUpURL} } 1024w,
-                            @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/' + ${teacher.closeUpURL} } 1280w|"
-                        th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto/' + ${teacher.closeUpURL} }"
-                        class="lazyload img-fluid rounded-circle mx-auto mt-3"
-                        style="width: 8rem;"
-                        alt="image teacher"
-                    />
-                    <div class="card-body">
-                        <h4 th:text="${teacher.name} + ' ' + ${teacher.surname} " style="font-weight: 600"></h4>
-                        <p th:text="${teacher.artName}" class="lead"></p>
-                        <p th:text="${teacher.biography}"></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center">
-                            <div class="px-4">
-                                <a th:href="${teacher.facebook}">
-                                    <i class="fab fa-facebook fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="px-4">
-                                <a th:href="${teacher.instagram}">
-                                    <i class="fab fa-instagram fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="px-4">
-                                <a th:href="${teacher.youtube}">
-                                    <i class="fab fa-youtube fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="px-4">
-                                <a th:href="${teacher.twitter}">
-                                    <i class="fab fa-twitter fa-lg"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </th:block>
-    </div>
-</div>
 
 
 </body>

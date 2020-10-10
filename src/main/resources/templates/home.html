@@ -9,13 +9,13 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-    <div class="jumbotron jumbotron-fluid bg-applejack text-white text-center text-shadow">
+    <div id="showcase" class="jumbotron jumbotron-fluid bg-image-showcase bg-applejack text-white text-center text-shadow mb-0">
         <div class="container mt-7">
             <h2 class="display-5">Accademia Arti Urbane</h2>
             <h1 class="display-3 brand-font">DHART ACADEMY</h1>
-            <h3>#<span class="text-primary">QUALITY</span>overQUANTITY</h3>
+            <h3>#QUALITYoverQUANTITY</h3>
             <div class="space-50"></div>
-            <p class="lead">
+            <p class="lead" style="font-size: 1.3rem;">
                 Immergiti nella cultura delle arti urbane appassionandoti a questo <strong>stile di vita</strong> <br/>
                 <strong>Esprimi te stesso</strong> attraverso l’arte portando la tua <strong>passione</strong> ad un altro livello. <br/>
                 Arricchisci la tua esperienza con tanti artisti e <strong>divertiti</strong> con i tuoi amici! <br/>
@@ -31,17 +31,17 @@
     </div>
 
 
-    <section id="home-hero" class="mb-7 mt-5">
-        <div class="container">
-            <h2 class="display-5 text-center mb-6">ESPERIENZE</h2>
+    <section id="home-hero" class="mb-7 pt-5">
+        <div class="container text-center">
+            <h2 class="display-4 mb-6">ESPERIENZE</h2>
 
             <div class="row mb-7"> <!-- first hero row -->
-                <div class="col-lg-6 col-md-10 my-auto ml-0">
+                <div class="col-lg-6 col-md-10 my-auto">
                     <h2>Claudio <span class="text-primary">Baglioni</span></h2>
                     <p>Il 29 Luglio 2019 Alessio Venditti, fondatore della Dhart-Academy, viene selezionato dal noto coreografo
                         Giuliano Peparini per formare il corpo di ballo per la tournée "50 Al Centro" di Claudio Baglioni.</p>
-                    <div>
-                        <a id="btn-modal-baglioni" href="#" class="btn btn-gradient-blue text-uppercase" data-toggle="modal" data-target="#modal-baglioni">
+                    <div class="mb-4">
+                        <a id="btn-modal-baglioni" href="#" class="btn btn-gradient-blue text-uppercase mt-1" data-toggle="modal" data-target="#modal-baglioni">
                             <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                             </svg>
@@ -66,12 +66,12 @@
             </div> <!-- end first hero row -->
 
             <div class="row"> <!-- second hero row -->
-                <div class="col-lg-6 col-md-10 text-right my-auto ml-auto order-last">
+                <div class="col-lg-6 col-md-10 my-auto ml-auto">
                     <h2>+30 Premi e Riconoscimenti <span class="text-primary">Internazionali</span></h2>
                     <p>Olanda, Inghilterra, Danimarca, California, Sacramento, San Francisco, Seattle, Francia, New York,
                         Polonia, Germania, Canada: sono solo alcuni dei paesi dove il nostro fondatore ha partecipato
                         aggiudicandosi il primo posto a competizioni di livello nazionale e internazionale</p>
-                    <a href="#" class="btn btn-gradient-blue text-uppercase" data-toggle="modal" data-target="#modal-awards">
+                    <a id="btn-awards" href="#" class="btn btn-gradient-blue text-uppercase mt-1 mb-4" data-toggle="modal" data-target="#modal-awards">
                         <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                             <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
@@ -82,7 +82,7 @@
                         <span class="align-middle">Esplora i nostri successi</span>
                     </a>
                 </div>
-                <div class="col-lg-6 col-md-10">
+                <div id="second-hero-image" class="col-lg-6 col-md-10 order-first">
                     <img
                         data-sizes="auto"
                         loading="lazy"
@@ -103,8 +103,8 @@
 
     <section id="home-gym-structure" class="my-6">
         <div class="container text-center">
-            <h2 class="text-primary text-uppercase py-5">Familiarizza con la struttura</h2>
-            <p class="col-lg-7 mx-auto mb-5">Dhart Academy è di forte stampo urbano ma all’interno trovano spazio anche la danza, il teatro,
+            <h2 class="display-4 text-primary text-uppercase py-5">Familiarizza con la struttura</h2>
+            <p class="col-lg-8 mx-auto mb-5" style="font-size: 1.4rem">Dhart Academy è di forte stampo urbano ma all’interno trovano spazio anche la danza, il teatro,
                 laboratori artistici di Djing, Graffiti e molto altro ancora!</p>
 
             <!-- carousel -->
@@ -177,8 +177,8 @@
     <!-- TESTIMONIALS -->
     <section id="home-clients-reviews" class="bg-black text-white pt-8 pb-5 mt-6">
         <div class="container text-center">
-            <h2 class="text-uppercase">Le recensioni dei nostri clienti</h2>
-            <p class="lead">Ascolta le opinioni dei nostri iscritti</p>
+            <h2 class="display-4 text-uppercase">Le recensioni dei nostri clienti</h2>
+            <p class="lead" style="font-size: 1.5rem">Ascolta le opinioni dei nostri iscritti</p>
 
             <!-- carousel reviews -->
             <div id="homeCarouselReviews" class="carousel slide" data-ride="carousel">
@@ -258,7 +258,7 @@
                 </a>
             </div>
             <div class="col-lg-4 m-auto">
-                <img data-sizes="auto"
+                <img id="home-dhart-since" data-sizes="auto"
                      loading="lazy"
                      th:attr="srcset=|
                                 @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1601812695/dhart-academy/Since2015dhart_bzrayy.jpg'} 256w,
@@ -291,6 +291,11 @@
     <!-- Video baglioni modal -->
     <div class="modal fade" id="modal-baglioni" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
         <div th:replace="fragments/utilities :: videoModal"></div>
+    </div>
+
+    <!-- Awards modal -->
+    <div class="modal fade" id="modal-awards" tabindex="-1" role="dialog" aria-labelledby="awards" aria-hidden="true">
+        <div th:replace="fragments/utilities :: awards"></div>
     </div>
 
     <div th:replace="fragments/footer"></div>

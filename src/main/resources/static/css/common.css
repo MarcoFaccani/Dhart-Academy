@@ -1,7 +1,11 @@
 body {
-    font-family: 'Objective', sans-serif;
+    font-family: 'Oswald', sans-serif;
     overflow-x: hidden;
 }
+
+.subheading { font-size: 1.5rem; }
+.subheading-md { font-size: 1.3rem; }
+.subheading-sm { font-size: 1.15rem; }
 
 #main-navbar #navbar-social-media li a { color: white; }
 .navbar-social-media-white { color: white!important; }

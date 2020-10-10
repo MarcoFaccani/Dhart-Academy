@@ -10,18 +10,18 @@
     <div th:replace="fragments/navbar :: navbar"></div>
 
     <!-- SHOWCASE -->
-    <div class="jumbotron jumbotron-fluid bg-image-showcase bg-contact text-white text-center text-shadow">
+    <div id="showcase" class="jumbotron jumbotron-fluid bg-image-showcase bg-contact text-white text-center text-shadow">
         <div class="container mt-11">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-10 col-md-8 col-lg-7">
                     <h2 class="display-3 text-uppercase">Siamo a tua <br/> disposizione</h2>
+                    <a href="#email-form" class="btn-contattaci btn btn-gradient-blue" style="position:relative">
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                        scrivici una email!
+                    </a>
                 </div>
-                <a href="#email-form" class="btn-contattaci btn btn-gradient-blue" style="position:relative">
-                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                    </svg>
-                    scrivici una email!
-                </a>
             </div>
         </div>
     </div>
@@ -39,19 +39,19 @@
                 <div class="row mt-5">
                     <div class="col-10 mx-auto">
                         <div class="row mx-auto">
-                            <div class="col-lg-6 col-sm-10">
+                            <div class="col-lg-6 col-sm-10 mx-auto">
                                 <input type="text" th:field="*{name}" class="form-control" placeholder="Nome" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
-                            <div class="col-lg-6 col-sm-10">
+                            <div class="col-lg-6 col-sm-10 mx-auto">
                                 <input type="text"  th:field="*{surname}" class="form-control" placeholder="Cognome" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
-                            <div class="col-lg-6 col-sm-10">
+                            <div class="col-lg-6 col-sm-10 mx-auto">
                                 <input type="email" th:field="*{email}" class="form-control" placeholder="La vostra email" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>
-                            <div class="col-lg-6 col-sm-10">
+                            <div class="col-lg-6 col-sm-10 mx-auto">
                                 <input type="number" th:field="*{phoneNumber}" class="form-control" placeholder="Recapito telefonico" required>
                                 <div class="invalid-feedback">Perfavore compila questo campo</div>
                             </div>

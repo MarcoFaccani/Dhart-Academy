@@ -1,6 +1,7 @@
 package it.dhartacademy.controller;
 
 import it.dhartacademy.model.ContactForm;
+import it.dhartacademy.repository.CourseTeacherRepository;
 import it.dhartacademy.service.MainService;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.Binary;
@@ -42,6 +43,7 @@ public class AppController {
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("reviews", mainService.getAllReviews());
+        model.addAttribute("awards", mainService.getHomeAwards());
         model.addAttribute("modalTitle", "Tournée \"50 Al Centro\"");
         model.addAttribute("modalYoutubeURL", "https://www.youtube.com/embed/tqDG6lqpEWU");
         return "home";

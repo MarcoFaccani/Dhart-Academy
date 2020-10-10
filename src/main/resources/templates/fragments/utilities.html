@@ -5,7 +5,7 @@
     <div th:fragment="reviews(author, message)" class="carousel-item" th:classappend="${iterStat.index}==1 ? active : '' ">
         <div class="w-75 border border-light rounded p-4 mx-auto mb-3">
             <div th:replace="fragments/utilities :: stars"></div>
-            <p th:text="${message}" class="mt-2"></p>
+            <p th:text="${message}" class="mt-2" style="font-size: 1.2rem"></p>
             <h6 th:text="${author}"></h6>
         </div>
     </div>
@@ -30,11 +30,11 @@
         </div> <!-- end stars-->
     </div>
 
-    <!-- Modal -->
+    <!-- Video Modal -->
     <div th:fragment="videoModal" class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div th:if="${modalTitle} != null" class="modal-header mx-auto">
-                <h5 th:text="${modalTitle}" class="modal-title" id="exampleModalLongTitle"></h5>
+                <h5 th:text="${modalTitle}" class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -51,6 +51,58 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Awards Modal -->
+    <div th:fragment="awards" class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <!-- header -->
+            <div class="modal-header mx-auto">
+                <h5 class="modal-title">Premi & Successi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- body -->
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="card">
+                        <div class="card-body text-center p-0">
+                            <table class="table table-sm table-bordered">
+                                <!-- table columns titles -->
+                                <thead class="btn-gradient-blue">
+                                <tr>
+                                    <th scope="col" class="p-2">Paese</th>
+                                    <th scope="col" class="p-2">Risultato</th>
+                                    <th scope="col" class="p-2">Evento</th>
+                                </tr>
+                                </thead>
+
+                                <!-- table content -->
+                                <tbody>
+                                <th:block th:each="award: ${awards}">
+                                    <tr>
+                                        <th th:text="${award.country}" scope="row"></th>
+                                        <td th:text="${award.achievement}"></td>
+                                        <td th:text="${award.eventName}"></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+
 
 
 </body>

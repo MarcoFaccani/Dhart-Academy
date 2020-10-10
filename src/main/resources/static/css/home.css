@@ -1,12 +1,15 @@
 #home #home-hero p { font-size: 1.3rem; }
+#home #showcase .container { position: relative; } /* required for dark overlay not effecting the text */
+
+.bg-image-showcase::before { /* dark overlay */
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+
 
 #home #home-dhart-fam { border-bottom: 2px solid black; }
 
 .bg-applejack {
-    align-items: center;
-    min-height: calc(100vh); /* calc(100vh - 105px); */
-    background-size: cover !important;
-    background-position: center center !important;
     background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1601732687/dhart-academy/applejack_jfhle2.jpg);
     /*background-image:
         -webkit-image-set(
@@ -39,3 +42,33 @@
     border-width: 0 0 10vw calc(100vw - 17px);
     border-style: solid;
 }
+
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+
+    /* center home-hero */
+    #home #home-hero .col-md-10, #home #home-hero .col-md-10 h2, #home #home-hero .col-md-10 p {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #home #home-hero #second-hero-image { order: 0; } /* don't force image to be shown before text */
+
+
+    .col-lg-6:nth-child(2) { display: none } /* hide second image dhart-family */
+
+    #home-dhart-since { margin-bottom: 1.5rem; margin-top: 1.5rem} /* add space to dhart-since-logo */
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {  }
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}
