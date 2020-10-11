@@ -66,7 +66,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getBreakdanceModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/breakdance";
+        return "courses/breakdance";
     }
 
     @GetMapping("/courses/dancehall")
@@ -77,7 +77,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getDancehallModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/dancehall";
+        return "courses/dancehall";
     }
 
     @GetMapping("/courses/dj")
@@ -88,7 +88,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getDjModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/dj";
+        return "courses/dj";
     }
 
     @GetMapping("/courses/floorwork")
@@ -99,7 +99,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getFloorworkModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/floorwork";
+        return "courses/floorwork";
     }
 
     @GetMapping("/courses/graffiti")
@@ -110,7 +110,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getGraffitiModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/graffiti";
+        return "courses/graffiti";
     }
 
     @GetMapping("/courses/hiphop")
@@ -121,7 +121,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getHipHopModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/hiphop";
+        return "courses/hiphop";
     }
 
     @GetMapping("/courses/house")
@@ -132,7 +132,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getHouseModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/house";
+        return "courses/house";
     }
 
     @GetMapping("/courses/vouge")
@@ -143,7 +143,7 @@ public class AppController {
         model.addAttribute("courseModel", mainService.getVougeModel());
         model.addAttribute("packages", mainService.getPackages());
         //TODO: add modal informations
-        return "/courses/vouge";
+        return "courses/vouge";
     }
 
 
@@ -169,7 +169,7 @@ public class AppController {
     @GetMapping(value = "/courses/calendar", produces = MediaType.APPLICATION_PDF_VALUE)
     public FileSystemResource getCalendarioLezioni() throws Exception {
         log.info("Recupero calendario lezioni");
-        return new FileSystemResource(Paths.get("src/main/resources/static/files/calendario-lezioni.pdf").toFile());
+        return new FileSystemResource(Paths.get("files/calendario-lezioni.pdf").toFile());
         //Binary fileBinario = mainService.getCalendarioLezioni();
         //return new FileSystemResource(Files.write(Paths.get("calendario-lezioni"), fileBinario.getData()));
     }

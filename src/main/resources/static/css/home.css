@@ -56,7 +56,7 @@
     #home #home-hero #second-hero-image { order: 0; } /* don't force image to be shown before text */
 
 
-    .col-lg-6:nth-child(2) { display: none } /* hide second image dhart-family */
+    #home-dhart-fam .col-lg-6:nth-child(2) { display: none } /* hide second image dhart-family */
 
     #home-dhart-since { margin-bottom: 1.5rem; margin-top: 1.5rem} /* add space to dhart-since-logo */
 }
