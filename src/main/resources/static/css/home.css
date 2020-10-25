@@ -5,9 +5,35 @@
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+#home-showcase-carousel .carousel-item {
+    align-items: center; /* for content */
+    min-height: 100vh;
+    background-size: cover;
+}
+
+#home-showcase-carousel .carousel-caption {
+    bottom: 200px;
+}
+
+.slide-show-image-1 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/v1601812936/dhart-academy/baglioni-3_r2iyga.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
+.slide-show-image-2 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/f_auto,q_auto/v1603663233/dhart-academy/dhalsim_battle3_ff8512.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
+.slide-show-image-3 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/f_auto,q_auto/v1603706798/dhart-academy/dj_qo1x6s.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
 
 
 #home #home-dhart-fam { border-bottom: 2px solid black; }
+
 
 .bg-applejack {
     background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1601732687/dhart-academy/applejack_jfhle2.jpg);

@@ -9,13 +9,21 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-    <div id="showcase" class="jumbotron jumbotron-fluid bg-image-showcase bg-applejack text-white text-center text-shadow mb-0">
+    <div id="home-showcase-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item slide-show-image-1 active"></div>
+            <div class="carousel-item slide-show-image-2"></div>
+            <div class="carousel-item slide-show-image-3"></div>
+        </div>
+    </div>
+
+    <!--div id="showcase" class="jumbotron jumbotron-fluid bg-image-showcase bg-applejack text-white text-center text-shadow mb-0">
         <div class="container mt-7">
             <h2 class="display-5">Accademia Arti Urbane</h2>
             <h1 class="display-4">DHART ACADEMY</h1>
             <h3>#<span style="color: lime; font-weight: 500">QUALITY</span>over<span class="text-danger">QUANTITY</span></h3>
             <div class="space-50"></div>
-            <p class="lead" style="font-size: 1.3rem;">
+            <p class="lead" style="font-size: 1.3rem;"> img-fluid
                 Immergiti nella cultura delle arti urbane appassionandoti a questo <strong>stile di vita</strong> <br/>
                 <strong>Esprimi te stesso</strong> attraverso l’arte portando la tua <strong>passione</strong> ad un altro livello. <br/>
                 Arricchisci la tua esperienza con tanti artisti e <strong>divertiti</strong> con i tuoi amici! <br/>
@@ -28,14 +36,9 @@
                     </svg>
                 </a>
             </div>
-            <!--a href="/corsi" class="btn btn-gradient-blue">
-                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-11.5.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
-                </svg>
-                <span class="align-middle">Scopri i nostri corsi</span>
-            </a-->
+
         </div>
-    </div>
+    </div-->
 
 
     <section id="home-hero" class="mb-7 pt-7">
@@ -306,6 +309,15 @@
     </div>
 
     <div th:replace="fragments/footer"></div>
+
+
+    <script>
+        $('#home-showcase-carousel.carousel').carousel({
+            interval: 3500,
+            wrap: true,
+            pause: false
+        })
+    </script>
 
 </body>
 </html>
