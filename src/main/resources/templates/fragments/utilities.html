@@ -31,10 +31,10 @@
     </div>
 
     <!-- Video Modal -->
-    <div th:fragment="videoModal" class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div th:fragment="videoModal(title, url)" class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div th:if="${modalTitle} != null" class="modal-header mx-auto">
-                <h5 th:text="${modalTitle}" class="modal-title"></h5>
+            <div th:if="${title} != null" class="modal-header mx-auto">
+                <h5 th:text="${title}" class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -42,7 +42,7 @@
             <div class="modal-body p-0">
                 <!-- 16:9 aspect ratio -->
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" th:src="${modalYoutubeURL}" id="video"
+                    <iframe class="embed-responsive-item" th:src="${url}" id="video"
                             allowscriptaccess="always" allow="autoplay"></iframe>
                 </div>
             </div>

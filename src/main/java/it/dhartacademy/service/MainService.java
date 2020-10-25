@@ -64,11 +64,12 @@ public class MainService {
 
     public CourseModel getBreakdanceModel() {
         CourseModel model =  CourseModel.builder()
-                .name("breakdance")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812943/dhart-academy/one-hand-babyfreeze_vfkuh5.jpg")
-                .showcaseMotivatorText("Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!")
-                .teachers(courseTeacherRepository.findByCoursesContaining("breakdance"))
-                .build();
+            .name("breakdance")
+            .showcaseVideoURL("https://www.youtube.com/embed/tMciF6z4XVw")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812943/dhart-academy/one-hand-babyfreeze_vfkuh5.jpg")
+            .showcaseMotivatorText("Esprimiti, partecipa ad eventi, battles ed entra a far parte della nostra famiglia!")
+            .teachers(courseTeacherRepository.findByCoursesContaining("breakdance"))
+            .build();
         log.info("BreakdanceModel: {}", model);
         return model;
     }
@@ -76,6 +77,7 @@ public class MainService {
     public CourseModel getDancehallModel() {
         CourseModel model = CourseModel.builder()
             .name("dancehall")
+            .showcaseVideoURL("https://www.youtube.com/embed/GkNF9iCi8NE")
             .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812549/dhart-academy/dancehall-girls_mxovvy.jpg")
             .teachers(courseTeacherRepository.findByCoursesContaining("dancehall"))
             .build();
@@ -86,6 +88,7 @@ public class MainService {
     public CourseModel getDjModel() {
         CourseModel model = CourseModel.builder()
             .name("dj")
+            .showcaseVideoURL("https://www.youtube.com/embed/fE2kLZLh6MU")
             .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812610/dhart-academy/dj-dhalsim_bxicp9.jpg")
             .teachers(courseTeacherRepository.findByCoursesContaining("dj"))
             .build();
@@ -95,50 +98,55 @@ public class MainService {
 
     public CourseModel getFloorworkModel() {
         CourseModel model = CourseModel.builder()
-                .name("floorwork")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1602283185/dhart-academy/floorwork-show_pdzycu.jpg")
-                .teachers(courseTeacherRepository.findByCoursesContaining("floorwork"))
-                .build();
+            .name("floorwork")
+            .showcaseVideoURL("https://www.youtube.com/embed/_vgBiQ208Xg")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1602283185/dhart-academy/floorwork-show_pdzycu.jpg")
+            .teachers(courseTeacherRepository.findByCoursesContaining("floorwork"))
+            .build();
         log.info("FloorworkModel : {}", model);
         return model;
     }
 
     public CourseModel getGraffitiModel() {
         CourseModel model = CourseModel.builder()
-                .name("graffiti")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1602285111/dhart-academy/graffiti2_uxkhzz.jpg")
-                .teachers(courseTeacherRepository.findByCoursesContaining("graffiti"))
-                .build();
+            .name("graffiti")
+            .showcaseVideoURL("https://www.youtube.com/embed/HxQC3sbYHwM")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1602285111/dhart-academy/graffiti2_uxkhzz.jpg")
+            .teachers(courseTeacherRepository.findByCoursesContaining("graffiti"))
+            .build();
         log.info("GraffitiModel : {}", model);
         return model;
     }
 
     public CourseModel getHipHopModel() {
         CourseModel model = CourseModel.builder()
-                .name("hip hop")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812759/dhart-academy/house_rp9lv4.jpg")
-                .teachers(courseTeacherRepository.findByCoursesContaining("hip hop"))
-                .build();
+            .name("hip hop")
+            .showcaseVideoURL("https://www.youtube.com/embed/zw_bg4jcY-I")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812759/dhart-academy/house_rp9lv4.jpg")
+            .teachers(courseTeacherRepository.findByCoursesContaining("hip hop"))
+            .build();
         log.info("HipHopModel : {}", model);
         return model;
     }
 
     public CourseModel getHouseModel() {
         CourseModel model = CourseModel.builder()
-                .name("house")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "TODO")
-                .teachers(courseTeacherRepository.findByCoursesContaining("house"))
-                .build();
+            .name("house")
+            .showcaseVideoURL("https://www.youtube.com/embed/0l3sIYnRHPs")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "TODO")
+            .teachers(courseTeacherRepository.findByCoursesContaining("house"))
+            .build();
         log.info("HouseModel : {}", model);
         return model;
     }
 
     public CourseModel getVougeModel() {
         CourseModel model = CourseModel.builder()
-                .name("vouge")
-                .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812709/dhart-academy/vouge4_sf8wyn.jpg")
-                .teachers(courseTeacherRepository.findByCoursesContaining("vouge"))
-                .build();
+            .name("vouge")
+            .showcaseVideoURL("https://www.youtube.com/embed/mlXKQcFDFcM")
+            .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812709/dhart-academy/vouge4_sf8wyn.jpg")
+            .teachers(courseTeacherRepository.findByCoursesContaining("vouge"))
+            .build();
         log.info("VougeModel : {}", model);
         return model;
     }

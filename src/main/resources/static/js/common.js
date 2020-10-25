@@ -5,6 +5,7 @@ $( document ).ready( function () {
     changeNavbarColorOnScroll();
     swapActiveClassInNavbar()
     getCopyrightYear();
+    autoplayEmbedYoutubeVideos()
 });
 
 
@@ -36,5 +37,22 @@ function swapActiveClassInNavbar() {
 // Get the current year for the copyright
 function getCopyrightYear() {
     $('#copyright-year').text(new Date().getFullYear());
+}
+
+
+function autoplayEmbedYoutubeVideos() {
+    // This function help to autoplay the video only when the modal is opened (rather then on page-load)
+    // and also to stop the audio once the modal is closed
+    let videoSrc = $("#course-video iframe").attr("src");
+
+    $('#course-video').on('show.bs.modal', function () { // on opening the modal
+        // set the video to autostart
+        $("#course-video iframe").attr("src", videoSrc+"?autoplay=1");
+    });
+
+    $("#course-video").on('hidden.bs.modal', function (e) { // on closing the modal
+        // stop the video
+        $("#course-video iframe").attr("src", null);
+    });
 }
 

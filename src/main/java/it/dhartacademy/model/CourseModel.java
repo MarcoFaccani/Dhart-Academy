@@ -46,6 +46,7 @@ public class CourseModel {
     }
 
     private String name;
+    private String showcaseVideoURL;
     private String showcaseImageURL;
     private String showcaseMotivatorText;
     private List<CourseTeacher> teachers;

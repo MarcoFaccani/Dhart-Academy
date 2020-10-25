@@ -29,11 +29,23 @@
                     </p>
 
                     <!-- Video Modal Trigger -->
-                    <!--a class="d-block btn text-uppercase" data-toggle="modal" data-target="#modal-baglioni">
-                        <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                        </svg>
-                    </a-->
+                    <div>
+                        <a class="btn" data-toggle="modal" data-target="#course-video">
+                            <img
+                                data-sizes="auto"
+                                loading="lazy"
+                                th:attr="srcset=|
+                                    @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_256/v1603658713/dhart-academy/youtube-icon_noknfj.png'} 256w,
+                                    @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_512/v1603658713/dhart-academy/youtube-icon_noknfj.png'} 512w,
+                                    @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_768/v1603658713/dhart-academy/youtube-icon_noknfj.png'} 768w,
+                                    @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1024/v1603658713/dhart-academy/youtube-icon_noknfj.png'} 1024w,
+                                    @{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_1280/v1603658713/dhart-academy/youtube-icon_noknfj.png'} 1280w|"
+                                th:src="@{${cloudinaryBaseUrl} + ${cloudinaryTransfCommon} + 'w_auto' + '/v1603658713/dhart-academy/youtube-icon_noknfj.png'}"
+                                class="lazyload img-fluid" alt="youtube icon" style="width: 6rem"
+                            />
+                        </a>
+                    </div>
+
 
                 </div>
             </div>

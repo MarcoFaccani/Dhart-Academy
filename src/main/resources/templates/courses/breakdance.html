@@ -12,11 +12,15 @@
     <!-- SHOWCASE -->
     <div th:replace="fragments/courses :: showcase(courseName=${courseModel.name}, imageURL=${courseModel.showcaseImageURL}, motivatorText=${courseModel.showcaseMotivatorText})"></div>
 
+    <!-- Video Course modal -->
+    <div class="modal fade" id="course-video" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
+        <div th:replace="fragments/utilities :: videoModal(title=null, url=${courseModel.showcaseVideoURL})"></div>
+    </div>
+
     <!-- TEACHERS -->
     <div th:replace="fragments/courses :: teachers"></div>
 
-
-        <!-- PACKAGES -->
+    <!-- PACKAGES -->
     <div th:replace="fragments/courses :: packages"></div>
 
     <div th:replace="fragments/footer"></div>

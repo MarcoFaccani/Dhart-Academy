@@ -65,6 +65,7 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getBreakdanceModel());
         model.addAttribute("packages", mainService.getPackages());
+
         //TODO: add modal informations
         return "courses/breakdance";
     }
@@ -169,7 +170,7 @@ public class AppController {
     @GetMapping(value = "/courses/calendar", produces = MediaType.APPLICATION_PDF_VALUE)
     public FileSystemResource getCalendarioLezioni() throws Exception {
         log.info("Recupero calendario lezioni");
-        return new FileSystemResource(Paths.get("files/calendario-lezioni.pdf").toFile());
+        return new FileSystemResource(Paths.get("src/main/resources/static/files/calendario-lezioni.pdf").toFile());
         //Binary fileBinario = mainService.getCalendarioLezioni();
         //return new FileSystemResource(Files.write(Paths.get("calendario-lezioni"), fileBinario.getData()));
     }

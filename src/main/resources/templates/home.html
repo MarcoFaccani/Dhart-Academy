@@ -297,7 +297,7 @@
 
     <!-- Video baglioni modal -->
     <div class="modal fade" id="modal-baglioni" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
-        <div th:replace="fragments/utilities :: videoModal"></div>
+        <div th:replace="fragments/utilities :: videoModal(title=${modalTitle}, url=${modalYoutubeURL})"></div>
     </div>
 
     <!-- Awards modal -->
