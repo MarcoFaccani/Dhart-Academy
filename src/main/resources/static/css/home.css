@@ -13,6 +13,7 @@
 
 #home-showcase-carousel .carousel-caption {
     bottom: 200px;
+    text-shadow: 10px 1px 20px rgba(2, 2, 2, 1);
 }
 
 .slide-show-image-1 {
