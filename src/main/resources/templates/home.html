@@ -39,7 +39,7 @@
                     <p>Il 29 Luglio 2019 Alessio Venditti, fondatore della Dhart-Academy, viene selezionato dal noto coreografo
                         Giuliano Peparini per formare il corpo di ballo per la tournée "50 Al Centro" di Claudio Baglioni.</p>
                     <div class="mb-4">
-                        <a id="btn-modal-baglioni" href="#" class="btn btn-gradient-blue text-uppercase mt-1" data-toggle="modal" data-target="#modal-baglioni">
+                        <a id="btn-modal-baglioni" href="#" class="btn btn-gradient-blue text-uppercase mt-1" data-toggle="modal" data-target="#modal-video">
                             <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                             </svg>
@@ -287,7 +287,7 @@
     </section>
 
     <!-- Video baglioni modal -->
-    <div class="modal fade" id="modal-baglioni" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
+    <div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
         <div th:replace="fragments/utilities :: videoModal(title=${modalTitle}, url=${modalYoutubeURL})"></div>
     </div>
 

@@ -43,12 +43,12 @@ public class MainService {
 
      static {
         String urlPrefix = cloudinaryBaseUrl + cloudinaryTransfCommon;
-        CoursePackage bronzo = new CoursePackage("bronzo", 35, "1", 1, 1, urlPrefix + "/v1601812953/dhart-academy/BRONZE_zpoea3.png");
-        CoursePackage argento = new CoursePackage("argento", 55, "1", 2, 1, urlPrefix + "/v1601812716/dhart-academy/SILVER_azup20.png");
-        CoursePackage oro = new CoursePackage("oro", 65, "2", 2, 1, urlPrefix + "/v1601812950/dhart-academy/GOLD_dkyrnh.png");
-        CoursePackage platino = new CoursePackage("platino", 90, "4", 4, 3, urlPrefix + "/v1601812721/dhart-academy/PLATINUM_nnncvo.png");
-        CoursePackage diamante = new CoursePackage("diamante", 110, "5", 5, 3, urlPrefix + "/v1601812949/dhart-academy/DIAMOND_fqmt7d.png");
-        CoursePackage special = new CoursePackage("special", 135, "illimitati", 5, 3, urlPrefix + "/v1601812727/dhart-academy/SPECIAL_gthzhg.png");
+        CoursePackage bronzo = new CoursePackage("bronzo", 40, "1", "1", "1", urlPrefix + "/v1601812953/dhart-academy/BRONZE_zpoea3.png");
+        CoursePackage argento = new CoursePackage("argento", 55, "1", "2", "2", urlPrefix + "/v1601812716/dhart-academy/SILVER_azup20.png");
+        CoursePackage oro = new CoursePackage("oro", 75, "2", "3", "3", urlPrefix + "/v1601812950/dhart-academy/GOLD_dkyrnh.png");
+        CoursePackage platino = new CoursePackage("platino", 105, "4", "4", "3", urlPrefix + "/v1601812721/dhart-academy/PLATINUM_nnncvo.png");
+        CoursePackage diamante = new CoursePackage("diamante", 125, "5", "5", "3", urlPrefix + "/v1601812949/dhart-academy/DIAMOND_fqmt7d.png");
+        CoursePackage special = new CoursePackage("special", 150, "illimitati", "", "3", urlPrefix + "/v1601812727/dhart-academy/SPECIAL_gthzhg.png");
         packages = Arrays.asList(bronzo, argento, oro, platino, diamante, special);
     }
 
@@ -140,14 +140,14 @@ public class MainService {
         return model;
     }
 
-    public CourseModel getVougeModel() {
+    public CourseModel getVogueModel() {
         CourseModel model = CourseModel.builder()
-            .name("vouge")
+            .name("Vvgue")
             .showcaseVideoURL("https://www.youtube.com/embed/mlXKQcFDFcM")
             .showcaseImageURL(cloudinaryBaseUrl + cloudinaryTransfCommon + "/v1601812709/dhart-academy/vouge4_sf8wyn.jpg")
-            .teachers(courseTeacherRepository.findByCoursesContaining("vouge"))
+            .teachers(courseTeacherRepository.findByCoursesContaining("vogue"))
             .build();
-        log.info("VougeModel : {}", model);
+        log.info("VogueModel : {}", model);
         return model;
     }
 

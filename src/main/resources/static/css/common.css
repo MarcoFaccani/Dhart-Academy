@@ -27,6 +27,10 @@ body {
 
 #main-navbar .btn-gradient-blue { padding: 0.3rem 2.5rem; }
 
+#navbar-social-media li a i:hover {
+    color: #37cfdc!important;
+}
+
 .scrolled {
     color: black;
     background: white !important;

@@ -12,8 +12,8 @@ public class CoursePackage {
     private String name;
     private int price;
     private String includedCourses;
-    private int hoursPerWeek;
-    private int openTrainingDays;
+    private String hoursPerWeek;
+    private String openTrainingDays;
     private String packageLogoURL;
     //private String cardBodyBackgroundImage;
 }
