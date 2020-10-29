@@ -5,9 +5,49 @@
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+#home-showcase-carousel .carousel-inner::before { /* dark overlay */
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+    content: '';
+    top: 0; left: 0; right: 0; bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+#home-showcase-carousel .carousel-item {
+    align-items: center; /* for content */
+    min-height: 100vh;
+    background-size: cover;
+}
+
+#home-showcase-carousel .carousel-caption {
+    bottom: 200px;
+    text-shadow: 10px 1px 20px rgba(2, 2, 2, 1);
+}
+
+
+
+.slide-show-image-1 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/v1603991800/dhart-academy/photo5823177180757210050_xkyay9.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
+.slide-show-image-2 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/v1603992160/dhart-academy/photo5823177180757210068_wuq5re.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
+.slide-show-image-3 {
+    background-image: url('https://res.cloudinary.com/facca/image/upload/v1603991801/dhart-academy/photo5823177180757210045_hoptf0.jpg');
+    background-size: cover !important;
+    background-position: center center !important;
+}
 
 
 #home #home-dhart-fam { border-bottom: 2px solid black; }
+
 
 .bg-applejack {
     background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1601732687/dhart-academy/applejack_jfhle2.jpg);
@@ -71,4 +111,8 @@
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+    #home-showcase-carousel .carousel-caption h1 {
+        font-size: 2.2rem;
+    }
+}

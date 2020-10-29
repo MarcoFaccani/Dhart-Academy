@@ -65,8 +65,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getBreakdanceModel());
         model.addAttribute("packages", mainService.getPackages());
-
-        //TODO: add modal informations
         return "courses/breakdance";
     }
 
@@ -77,7 +75,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getDancehallModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/dancehall";
     }
 
@@ -88,7 +85,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getDjModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/dj";
     }
 
@@ -99,7 +95,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getFloorworkModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/floorwork";
     }
 
@@ -110,7 +105,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getGraffitiModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/graffiti";
     }
 
@@ -121,7 +115,6 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getHipHopModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/hiphop";
     }
 
@@ -132,18 +125,16 @@ public class AppController {
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getHouseModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/house";
     }
 
-    @GetMapping("/courses/vouge")
-    public String getCourseVouge(Model model) {
-        log.info("Recupero corsi/house");
+    @GetMapping("/courses/vogue")
+    public String getCourseVogue(Model model) {
+        log.info("Recupero corsi/vogue");
         model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
         model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
-        model.addAttribute("courseModel", mainService.getVougeModel());
+        model.addAttribute("courseModel", mainService.getVogueModel());
         model.addAttribute("packages", mainService.getPackages());
-        //TODO: add modal informations
         return "courses/vouge";
     }
 
