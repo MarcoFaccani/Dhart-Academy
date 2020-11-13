@@ -9,10 +9,7 @@ body {
 
 /* NAVBAR */
 
-#main-navbar #brand-name {
-    font-size: 2rem;
-    text-shadow: 10px 1px 20px rgba(2, 2, 2, 1);
-}
+#main-navbar #brand-name { font-size: 2rem; }
 #main-navbar #navbar-social-media li a { color: white; }
 
 #main-navbar .nav-item a {
@@ -27,9 +24,7 @@ body {
 
 #main-navbar .btn-gradient-blue { padding: 0.3rem 2.5rem; }
 
-#navbar-social-media li a i:hover {
-    color: #37cfdc!important;
-}
+#navbar-social-media li a i:hover { color: #37cfdc!important; }
 
 .scrolled {
     color: black;
@@ -131,6 +126,12 @@ strong {
     box-shadow: 1px 0px 20px rgba(2, 2, 2, 1);
 }
 
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 1199px) {
+    #main-navbar .navbar-brand #brand-name {
+        font-size: 1.5rem
+    }
+}
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {
