@@ -1,14 +1,16 @@
 package it.dhartacademy.controller;
 
 import it.dhartacademy.model.ContactForm;
-import it.dhartacademy.repository.CourseTeacherRepository;
 import it.dhartacademy.service.MainService;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.InputStreamSource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,9 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 @Slf4j
 @Controller
@@ -159,11 +158,10 @@ public class AppController {
 
     @ResponseBody
     @GetMapping(value = "/courses/calendar", produces = MediaType.APPLICATION_PDF_VALUE)
-    public FileSystemResource getCalendarioLezioni() throws Exception {
+    public ResponseEntity<InputStreamSource> getCalendarioLezioni() throws Exception {
         log.info("Recupero calendario lezioni");
-        return new FileSystemResource(Paths.get("src/main/resources/static/files/calendario-lezioni.pdf").toFile());
-        //Binary fileBinario = mainService.getCalendarioLezioni();
-        //return new FileSystemResource(Files.write(Paths.get("calendario-lezioni"), fileBinario.getData()));
+        ClassPathResource pdfFile = new ClassPathResource("/static/files/calendario-lezioni.pdf");
+        return new ResponseEntity<InputStreamSource>(new InputStreamResource(pdfFile.getInputStream()), HttpStatus.OK);
     }
 
 
