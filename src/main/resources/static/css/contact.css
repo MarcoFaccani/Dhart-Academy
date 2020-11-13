@@ -1,5 +1,5 @@
 .bg-contact {
-    background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto,e_sharpen/v1602164211/dhart-academy/city_hpfio5.jpg);
+    background-image: url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_auto/v1602164211/dhart-academy/city_hpfio5.jpg);
 }
 
 #email-form .col-lg-5, #email-form .col-sm-10, #email-form .col-lg-12  {
@@ -18,10 +18,22 @@
     border-radius: .25rem;
 }
 
-
+@media only screen and (max-width: 959px) {
+    .bg-contact {
+        background-image:
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_1024/v1602164211/dhart-academy/city_hpfio5.jpg);
+    }
+}
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
     #showcase .container { margin-top: 18rem!important;}
     #showcase .display-3 { font-size: 3rem; font-weight: 500;}
 
+}
+
+@media only screen and (max-width: 479px) {
+    .bg-contact {
+        background-image:
+                url(https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_512/v1602164211/dhart-academy/city_hpfio5.jpg);
+    }
 }

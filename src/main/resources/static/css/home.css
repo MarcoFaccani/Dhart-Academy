@@ -99,6 +99,19 @@
     #home-dhart-fam .col-lg-6:nth-child(2) { display: none } /* hide second image dhart-family */
 
     #home-dhart-since { margin-bottom: 1.5rem; margin-top: 1.5rem} /* add space to dhart-since-logo */
+
+    .slide-show-image-1 {
+        background-image: url('https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_1024/v1603991800/dhart-academy/photo5823177180757210050_xkyay9.jpg');
+    }
+
+    .slide-show-image-2 {
+        background-image: url('https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_1024/v1603992160/dhart-academy/photo5823177180757210068_wuq5re.jpg');
+
+    }
+
+    .slide-show-image-3 {
+        background-image: url('https://res.cloudinary.com/facca/image/upload/f_auto,q_auto:best,w_1024/v1603991801/dhart-academy/photo5823177180757210045_hoptf0.jpg');
+    }
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
