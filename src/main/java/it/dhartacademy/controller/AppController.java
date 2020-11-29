@@ -1,6 +1,7 @@
 package it.dhartacademy.controller;
 
 import it.dhartacademy.model.ContactForm;
+import it.dhartacademy.model.CoursePackage;
 import it.dhartacademy.service.MainService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -39,8 +41,6 @@ public class AppController {
     @GetMapping("/")
     public String getHomePage(Model model) {
         log.info("Recupero la home-page");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("reviews", mainService.getAllReviews());
         model.addAttribute("awards", mainService.getHomeAwards());
         model.addAttribute("modalTitle", "Tournée \"50 Al Centro\"");
@@ -49,103 +49,83 @@ public class AppController {
     }
 
     @GetMapping("/contact")
-    public String getContactPage(Model model) {
+    public String getContactPage(Model model, ContactForm contactForm) {
         log.info("Recupero la pagina contatti");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
-        model.addAttribute("contactForm", new ContactForm());
         return "contact";
     }
 
     @GetMapping("/courses/breakdance")
     public String getCourseBreakdance(Model model) {
         log.info("Recupero corsi/breakdance");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getBreakdanceModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/breakdance";
     }
 
     @GetMapping("/courses/dancehall")
     public String getCourseDancehall(Model model) {
         log.info("Recupero corsi/dancehall");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getDancehallModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/dancehall";
     }
 
     @GetMapping("/courses/dj")
     public String getCourseDj(Model model) {
         log.info("Recupero corsi/dj");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getDjModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/dj";
     }
 
     @GetMapping("/courses/floorwork")
     public String getCourseFloorwork(Model model) {
         log.info("Recupero corsi/floorwork");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getFloorworkModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/floorwork";
     }
 
     @GetMapping("/courses/graffiti")
     public String getCourseGraffiti(Model model) {
         log.info("Recupero corsi/graffiti");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getGraffitiModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/graffiti";
     }
 
     @GetMapping("/courses/hiphop")
     public String getCourseHipHop(Model model) {
         log.info("Recupero corsi/hiphop");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getHipHopModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/hiphop";
     }
 
     @GetMapping("/courses/house")
     public String getCourseHouse(Model model) {
         log.info("Recupero corsi/house");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getHouseModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/house";
     }
 
     @GetMapping("/courses/vogue")
     public String getCourseVogue(Model model) {
         log.info("Recupero corsi/vogue");
-        model.addAttribute("cloudinaryBaseUrl", cloudinaryBaseUrl);
-        model.addAttribute("cloudinaryTransfCommon", cloudinaryTransfCommon);
         model.addAttribute("courseModel", mainService.getVogueModel());
-        model.addAttribute("packages", mainService.getPackages());
         return "courses/vouge";
     }
 
+    @ModelAttribute("cloudinaryBaseUrl")
+    public String cloudinaryBaseUrl() { return cloudinaryBaseUrl; }
+    
+    @ModelAttribute("cloudinaryTransfCommon")
+    public String cloudinaryTransfCommon() { return cloudinaryTransfCommon; }
+
+    @ModelAttribute("packages")
+    public List<CoursePackage> packages() { return mainService.getPackages(); }
 
 
     //____________________________________________________________________________________________________________________
 
 
     @PostMapping("/contact/send-email")
-    public String sendEmail(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult, Model model) {
+    public String sendEmail(ContactForm contactForm, Model model) {
         log.info("[START] send-email");
-        //if (bindingResult.hasErrors()) return "contact";
         try{
             mainService.sendNotification(contactForm);
         } catch (Exception ex){
