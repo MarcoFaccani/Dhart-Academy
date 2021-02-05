@@ -40,14 +40,14 @@ Note: the app won't run properly locally due to the need to hide database URI in
 <details>
   <summary>Home page | footer </summary>
   
-  ![](/demo/demo-foobar.png)
+  ![](/demo/demo-footbar.png)
   
 </details>
 
 <details>
   <summary>Course page | breakdance  </summary>
   
-  ![](/demo/demo-corso)
+  ![](/demo/demo-corso.png)
   
 </details>
 
@@ -75,6 +75,6 @@ Note: the app won't run properly locally due to the need to hide database URI in
 <details>
   <summary>Contact page | contact form  </summary>
   
-  ![](demo/demo-email-form.png)
+  ![](/demo/demo-email-form.png)
   
 </details>
